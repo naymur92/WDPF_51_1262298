@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Registration Form</title>
+	<style>
+		table{
+			width: 400px;
+			height: 300px;
+		}
+		.fwidth{
+			width: 250px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Student Registration Form</h1>
+	<form action="">
+		<table>
+			<tr>
+				<td>ID</td>
+				<td><input type="text" class="fwidth" name="ID" placeholder="Enter your ID"></td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><textarea name="Name" class="fwidth" rows="5" placeholder="Enter your Name"></textarea></td>
+			</tr>
+			<tr>
+				<td>Round</td>
+				<td>
+					<select name="round" class="fwidth">
+						<option value="" hidden>Select One</option>
+						<option value="47">Round 47</option>
+						<option value="48">Round 48</option>
+						<option value="49">Round 49</option>
+						<option value="50">Round 50</option>
+						<option value="51">Round 51</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<input type="radio" name="gender" value="male"> Male &nbsp;
+					<input type="radio" name="gender" value="female"> Female
+				</td>
+			</tr>
+			<tr>
+				<td>Education</td>
+				<td>
+					<input type="checkbox" name="Education" value="SSC"> SSC &nbsp;
+					<input type="checkbox" name="Education" value="HSC"> HSC
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" name="sumbit" value="Submit">
+					<input type="reset">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

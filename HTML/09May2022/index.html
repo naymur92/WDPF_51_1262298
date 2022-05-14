@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Index page</title>
+	<style>
+		.container{
+			width: 780px;
+			height: 500px;
+			margin: 0 auto;
+			background-color: #F4EBEB;
+		}
+		.menu{
+			width: 180px;
+			height: 480px;
+			float: left;
+			background-color: #F0BCC2;
+		}
+		.content{
+			width: 590px;
+			height: 480px;
+			float: left;
+			background-color: #BDD0F7;
+		}
+		iframe{			
+			width: 590px;
+			height: 480px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="menu">
+			<h2>Menu</h2><br>
+			<a href="ProductEntry.html" target="myFrame">Product Entry Form</a> <br>
+			<a href="table.html" target="myFrame">Table</a>
+		</div>
+		<div class="content">
+			<iframe src="ProductEntry.html" frameborder="0" name="myFrame"></iframe>
+		</div>
+	</div>
+</body>
+</html>

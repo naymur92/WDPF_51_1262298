@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q1. Product Entry Form</title>
+	<style>
+		table{
+			/*width: 400px;*/
+		}
+		.fwidth{
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<h2>Product Entry Form</h2>
+	<form action="">
+		<table>
+			<tr>
+				<td>ID</td>
+				<td><input type="text" class="fwidth" name="ID" placeholder="Enter your ID"></td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" class="fwidth" name="Name" placeholder="Enter your Name"></td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td>
+					<select name="fType" class="fwidth">
+						<option value="">Select One</option>
+						<option value="food">Food</option>
+						<option value="soap">Soap</option>
+						<option value="shampoo">Shampoo</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Imported</td>
+				<td>
+					<input type="checkbox" name="imported" value="yes"> Yes
+				</td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td><input type="text" class="fwidth" name="price" placeholder="Enter Price"></td>
+			</tr>
+			<tr>
+				<td>Manufacturer</td>
+				<td>
+					<textarea name="manufacturer" class="fwidth" rows="5"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" name="sumbit" value="Submit">
+					<input type="reset">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

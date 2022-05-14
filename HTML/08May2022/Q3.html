@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Answer- Q3</title>
+	<style>
+		.container{
+			width: 760px;
+			height: 581px;
+			margin: 0 auto;
+			border-radius: 5px;
+			padding-top: 5px;
+			background-color: #74B4F5;			
+		}
+		.lcont{
+			width: 200px;
+			float: left;
+			background-color: #A8BEFE;
+			height: 501px;
+			border-radius: 5px;
+		}
+		.rcont{
+			width: 557px;
+			float: left;
+			height: 500px;
+			border: 1px dotted black;
+			border-radius: 5px;
+			background-color: #F39B9B;			
+		}
+		h1{
+			text-align: center;
+		}
+		.lcont h2, a{
+			margin: 10px;
+		}
+		.lcont a{
+			text-decoration: none;
+		}
+		iframe{
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>iFrame Example using DIV</h1>
+		<div class="lcont">
+			<h2>Menu</h2><br>
+			<a href="Q1.html" target="myFrame">Question 1</a> <br><br>
+			<a href="Q2.html" target="myFrame">Question 2</a>
+		</div>
+		<div class="rcont">
+			<iframe src="Q1.html" name="myFrame" width="560px" height="500px"></iframe>
+		</div>
+	</div>
+</body>
+</html>

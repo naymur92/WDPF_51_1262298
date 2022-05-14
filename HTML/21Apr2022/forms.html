@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML Forms</title>
+</head>
+<body>
+	<h2>Contact Form</h2>
+	<hr>
+	<h3>Contact with us</h3>
+	<form action="forms.html">
+		<label>Name:</label><input type="text" name="Name" placeholder="Enter Your Name"><br>
+		Email:<input type="Email" name="Email" placeholder="Enter valid email"><br>
+		Subject:<input type="text" name="Subject" placeholder="Enter subject"><br>
+		<textarea name="Message" cols="20" rows="6" placeholder="Enter your message here"></textarea><br>
+		<input type="submit" name="submit" value="Send">
+	</form>
+
+	<br><br>
+	<h3>Login Form</h3>
+	<form action="forms.html">
+		<input type="email" name="email" placeholder="Enter your email"><br>
+		<input type="password" name="password"><br>
+		<input type="submit" name="sumbit" value="Login">
+	</form>
+
+	<br><br>
+	<hr>
+	<br>
+	<h3>Login form with table</h3>
+	<form action="forms.html" method="post">
+		<table>		
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="Login"></td>
+			</tr>		
+		</table>
+	</form>
+</body>
+</html>

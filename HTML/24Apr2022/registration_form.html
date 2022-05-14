@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+</head>
+<body>
+	<h2>Registration Form</h2>
+	<form action="" method="post">
+		<fieldset>
+			<legend>Admission Form</legend>
+			<input type="text" name="fullname" placeholder="Enter your full name"><br>
+			<input type="date" name="dob"><br>
+			<label for="">Gender</label>:<br>
+			Male<input type="radio" name="gender" value="male">
+			Female <input type="radio" name="gender" value="female"><br>
+			Subjects: <br>
+			PHP <input type="checkbox" name="subject1" value="php">
+			JavaScript <input type="checkbox" name="subject2" value="javascript">
+			MySQL <input type="checkbox" name="subject3" value="mysql">
+			DotNet <input type="checkbox" name="subject4" value="dotnet">
+			Laravel<input type="checkbox" name="subject5" value="laravel"> <br>
+			Location: <br>
+			<select name="location">
+				<option value="" disabled selected>&lt;Select One&gt;</option>
+				<optgroup label="Mirpur">
+					<option value="1">Mirpur 2</option>
+					<option value="6">Mirpur 10</option>
+				</optgroup>
+				<option value="2">Palton</option>
+				<option value="3">Gulshan</option>
+				<optgroup label="Dhanmondi">
+					<option value="4">Dhanmondi</option>
+					<option value="7">Zigatola</option>
+					<option value="8">Dhanmondi 15</option>
+				</optgroup>
+				<option value="5">Mohammadpur</option>
+			</select><br>
+			Upload your photo:
+			<input type="file" name="photo"><br>
+			<input type="hidden" name="Attachment"><br>
+			Phone: <input type="text" name="p-number"><br>
+			<input type="image" src="button.jpg" value="SUBMIT">
+		</fieldset>
+		<fieldset>
+			<legend>Login Info</legend>
+			<input type="email" name="email" placeholder="Enter a valid email"> <br>
+			<input type="password" name="password" placeholder="Input password"> <br>
+			<input type="password" name="password" placeholder="Retype password"> <br>
+		</fieldset><br>
+		<input type="reset"><br>
+		<input type="submit" name="submit" value="SUBMIT">
+	</form>
+</body>
+</html>

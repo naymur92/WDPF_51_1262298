@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function sumFunc(x,y){
+			var x=prompt("Enter your 1st number", "");
+			// alert("Yes, you have put "+ x);
+			var y=prompt("Enter your 2nd number", "");
+			x=parseInt(x);
+			y=parseInt(y);
+			var total=x+y;
+			var out="Total is= "+ total;
+			document.getElementById('display').innerHTML =out;
+
+		}
+	</script>
+	<button onclick="sumFunc()">Click Here</button>
+	<h2 id="display"></h2>
+</body>
+</html>

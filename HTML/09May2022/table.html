@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Q2- Table</title>
+	<style>
+		.tcontainer{
+			width: 500px;
+			height: 400px;
+			background-color: #E2E2E2;
+			padding: 10px;
+		}
+		table, th, td{
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		table{
+			width: 470px;
+			height: 350px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="tcontainer">
+		<table>
+			<caption><i>A test table with merged cells</i></caption>
+			<tr>
+				<td rowspan="2"></td>
+				<th colspan="2">Average</th>
+				<th rowspan="2">Red <br>eyes</th>
+			</tr>
+			<tr>
+				<th>height</th>
+				<th>weight</th>
+			</tr>
+			<tr>
+				<th>Males</th>
+				<td>1.9</td>
+				<td>0.003</td>
+				<td>40%</td>
+			</tr>
+			<tr>
+				<th>Females</th>
+				<td>1.7</td>
+				<td>0.002</td>
+				<td>43%</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

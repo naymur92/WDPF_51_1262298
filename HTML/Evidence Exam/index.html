@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iFrame Exmaple</title>
+	<style>
+		.container{
+			width: 760px;
+			height: 700px;
+			margin: 0 auto;
+			background-color: #FADBDB;
+			border-radius: 5px;
+		}
+		.menu{
+			width: 160px;
+			height: 621px;
+			float: left;
+			background-color: #D9B7FB;
+			padding-left: 10px;
+			border-radius: 5px;
+		}
+		.content{
+			width: 588px;
+			height: 620px;
+			border: 1px dotted black;
+			float: left;
+			background-color: #ACB0F8;
+			border-radius: 5px;
+		}
+		iframe{
+			width: 588px;
+			height: 620px;
+		}
+		a{
+			text-decoration: none;
+		}
+		h1{
+			text-align: center;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>iFrame Using DIV</h1>
+		<div class="menu">
+			<h2>Menu</h2><br>
+			<a href="table.html" target="myFrame">1. Table</a><br><br>
+			<a href="RegistrationForm.html" target="myFrame">2. Registration Form</a>
+		</div>
+		<div class="content">
+			<iframe src="table.html" frameborder="0" name="myFrame"></iframe>
+		</div>
+	</div>
+</body>
+</html>

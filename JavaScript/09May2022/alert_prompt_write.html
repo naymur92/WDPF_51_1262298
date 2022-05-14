@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Alert, Prompt and Write</title>
+</head>
+<body>
+	<h1>Write Method</h1>
+	<script>
+		document.write("Assalamu Alaikum, How are You? This is JavaScript Output.");
+	</script>
+	<h1>Alert Method</h1>
+	<p>This method shows popup menu.</p>
+	<script>
+		window.alert("Alert box will open (window.alert).");
+		alert("Alert box will open. (Only alert function.)");
+	</script>
+	<h1>Prompt Method</h1>
+	<script>
+		var x;
+		x=prompt("What is your name?", "");
+		document.write("Your entered name is = ", x);
+	</script>
+	<h2>Concatenation</h2>
+	<script>
+		var fname;
+		var lname;
+		fname=prompt("Enter your first name","");
+		lname=prompt("Enter your last name","");
+		document.write("Your Full Name is = ", fname + " "+lname);
+	</script>
+</body>
+</html>

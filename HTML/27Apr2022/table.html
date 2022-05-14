@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table, th, td{
+			border: 1px solid white;
+			border-collapse: collapse;
+		}
+		thead{
+			background-color: blue;
+			color: white;
+		}
+		tbody{
+			background-color: #DEA7B8;
+		}
+		tfoot{
+			background-color: blue;
+			color: white;
+			font-weight: bold;
+		}
+		.txtcenter{
+			text-align: center;
+		}
+		.txtright{
+			text-align: right;
+		}
+		th, td{
+			padding: 5px;
+		}
+		caption{
+			font-weight: bold;
+			background-color: #D690EA;
+		}
+	</style>
+</head>
+<body>
+	<h3>Table with thead, tbody, tfoot</h3>
+	<table>
+		<caption>Product List</caption>
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Extended</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Hard Disk</td>
+				<td class="txtcenter">1</td>
+				<td>$500</td>
+				<td>$400</td>
+			</tr>
+			<tr>
+				<td>CD Drive</td>
+				<td class="txtcenter">1</td>
+				<td>$200</td>
+				<td>$500</td>
+			</tr>
+			<tr>
+				<td>CDs</td>
+				<td class="txtcenter">10</td>
+				<td>$20</td>
+				<td>$50</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Total Amount</td>
+				<td class="txtright">$950</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>
