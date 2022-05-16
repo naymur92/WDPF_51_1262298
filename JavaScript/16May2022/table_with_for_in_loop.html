@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table, td, th{
+			border-collapse: collapse;
+		}
+		table{
+			width: 400px;
+			height: 50px;
+		}
+		td{
+			text-align: center;
+			vertical-align: middle;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<table border="1">
+		<caption>Table using <em>for</em> Loop</caption>
+		<script>
+			var fruits = ["Apple", "Banana", "Orange", "Lichi", "Pine Apple", "Jackfruit", "Malta"];
+			var x = 1;
+			for(var i in fruits){
+				document.write("<tr><th>" + x + ". </th><td>" + fruits[i] + "</td></tr>");
+				x++;
+			}
+		</script>
+	</table>
+</body>
+</html>

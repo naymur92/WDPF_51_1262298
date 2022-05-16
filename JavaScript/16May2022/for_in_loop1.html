@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>For In Loop</title>
+</head>
+<body>
+	<script>
+		var emailAd = prompt("Enter your E-mail address", "");
+
+		for(var counter in emailAd){
+			if(emailAd[counter]=="@"){
+				document.write("Your E-mail address is valid");
+				break;
+			}
+		}
+	</script>
+</body>
+</html>
