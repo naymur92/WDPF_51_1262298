@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Evidence 1</title>
+</head>
+<body>
+	<h2>Evidence 1</h2>
+	<script>
+		var mcq = prompt("Enter your MCQ Marks", "Out of 100");
+		var des = prompt("Enter your Descriptive Marks", "Out of 100");
+		var ev = prompt("Enter your Evidence Marks", "Out of 100");
+
+		mcq = parseInt(mcq);
+		des = parseInt(des);
+		ev = parseInt(ev);
+
+		if(mcq>=80 && des>=60 && ev>=60){
+			alert("You have passed.");
+		}
+		else{
+			alert("You have failed.");
+		}
+		
+	</script>
+
+	<p>Result have showed in alert window.</p>
+</body>
+</html>

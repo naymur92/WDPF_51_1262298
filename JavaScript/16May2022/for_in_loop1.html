@@ -8,12 +8,17 @@
 <body>
 	<script>
 		var emailAd = prompt("Enter your E-mail address", "");
+		var count = 0;
 
 		for(var counter in emailAd){
 			if(emailAd[counter]=="@"){
 				document.write("Your E-mail address is valid");
+				count++;
 				break;
 			}
+		}
+		if(count==0){
+			document.write("Your E-mail address is unvalid")
 		}
 	</script>
 </body>

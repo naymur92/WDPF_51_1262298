@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prime Number check</title>
+</head>
+<body>
+	<script>
+		var n = parseInt(prompt("Enter a number", ""))
+
+		function test_prime(n){
+			if(n===1){
+				return n + " is not a prime number.";
+			}
+			else if(n === 2){
+				return n + " is a prime number.";
+			}
+			else{
+				for(var x=2; x<n/2; x++){
+					if(n%x === 0){
+						return n + " is not a prime number.";
+					}
+				}
+				return n + " is a prime number.";
+			}
+		}
+
+		document.write(test_prime(n));
+	</script>
+</body>
+</html>
