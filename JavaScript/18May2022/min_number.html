@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Minimum number finder</title>
+</head>
+<body>
+	<h1>Minimum number finder</h1>
+	<script>
+		var n = parseInt(prompt("How many numbers you want to enter?"));
+		var numbers = [];
+
+		for(var i=0; i<n; i++){
+			numbers[i]=parseInt(prompt("Enter values: " + i + " th", "Number"));
+		}
+
+		var min;
+		for (var j=0; j<n; j++){
+			if(min<numbers[j]){
+				min = min;
+			}
+			else{
+				min = numbers[j];
+			}
+		}
+
+		document.write("<h2>Minimum number is : " + min + "</h2>");
+	</script>
+</body>
+</html>
