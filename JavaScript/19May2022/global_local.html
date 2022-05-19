@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Global & Local variable</title>
+</head>
+<body>
+	<script>
+		var onlyGlobal = "This variable is only global!";
+		var localGlobal = "I\'m global now!";
+
+		function showMe(){
+			var localGlobal = "I\'m now local";
+			var onlyLocal = "Only works on the local level.";
+			alert(localGlobal + "__" + onlyLocal);
+		}
+
+		showMe();
+
+		alert(onlyGlobal);
+		document.write(onlyGlobal + "<p>" + localGlobal);
+	</script>
+</body>
+</html>
