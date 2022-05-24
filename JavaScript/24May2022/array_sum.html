@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Array Sum</title>
+	<style>
+		#total{
+			color: green;
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="total"></div>
+	<script>
+		var numbers = [69, 68, 45, 20 ,23, 24];
+		var sum = 0;
+
+		for(var i in numbers){
+			sum+=numbers[i];
+		}
+
+		var output = "Total is " + sum;
+		document.getElementById("total").innerHTML=output;
+	</script>
+</body>
+</html>

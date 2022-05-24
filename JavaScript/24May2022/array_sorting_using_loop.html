@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Array Sorting Using Loop</title>
+</head>
+<body>
+	<script>
+		var country = ["Bangladesh", "India", "Pakistan", "China", "Japan", "United States", "NewZeland", "Zimbabew", "America"];
+		var max="";
+		var n=1;
+
+		for(var i=0; i<country.length; i++){
+			for(var j=i+1; j<country.length; j++){
+				if(country[i]>country[j]){
+					max=country[i];
+					country[i]=country[j];
+					country[j]=max;
+				}
+			}
+		}
+
+		for(var i=0; i<country.length; i++){
+			document.write(n+". "+country[i]+"<br>");
+			n++;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sum</title>
+</head>
+<body>
+	<form name="myform">
+		<fieldset>
+			<legend>Enter Numbers</legend>
+			<input type="text" name="num1" placeholder="Enter Number 1" value=""><br>
+			<input type="text" name="num2" placeholder="Enter Number 2" value=""><br>
+			<input type="text" name="num3" placeholder="Enter Number 3" value=""><br>
+		</fieldset>
+		<br>
+
+		<button onclick="summation()" type="button">Add</button><br><br>
+
+		<label for="sum">Sum =</label><input type="text" id="sum" name="sum" value="">
+	</form>
+	<div id="result"></div>
+
+	<script>
+		function summation(){
+			var num1 = parseInt(document.myform.num1.value);
+			var num2 = parseInt(document.myform.num2.value);
+			var num3 = parseInt(document.myform.num3.value);
+
+			var total = num1 + num2 + num3;
+
+			document.myform.sum.value= total;
+		}
+	</script>
+</body>
+</html>
