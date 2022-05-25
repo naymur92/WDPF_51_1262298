@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Odd Even Checker</title>
+	<style>
+		.odd{
+			color: red;
+			font-size: 35px;
+		}
+		.even{
+			color: green;
+			font-size: 35px;
+		}
+	</style>
+</head>
+<body>
+	<h2>Odd Even Checker</h2>
+	<div id="result" class=""></div>
+	<script>
+		var n = parseInt(prompt("Enter a number", ""));
+		var output = "";
+
+		if(n%2==0){
+			output = n + " is Even number.";
+			document.getElementById("result").innerHTML=output;
+			document.getElementById("result").className="even";
+		}
+		else{
+			output = n + " is Odd number.";
+			document.getElementById("result").innerHTML=output;
+			document.getElementById("result").className="odd";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.totalc{
+			color: #0718F2;
+		}
+		.pass{
+			color: green;
+		}
+		.fail{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Result Checker</h1>
+	<form action="" name="myform">
+		<table width="400px">
+			<tr>
+				<td>MCQ Marks: </td>
+				<td><input type="text" name="mcq" value="" placeholder="Enter MCQ number"></td>
+			</tr>
+			<tr>
+				<td>Descriptive Marks: </td>
+				<td><input type="text" name="des" value="" placeholder="Enter Descriptive number"></td>
+			</tr>
+			<tr>
+				<td>Evidence Marks: </td>
+				<td><input type="text" name="evd" value="" placeholder="Enter Evidence number"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="button" onclick="showresult()">Show Result</button>
+					<input type="reset">
+				</td>
+			</tr>
+			<tr>
+				<td>Total Marks: </td>
+				<td><input type="text" class="totalc" name="totalm" value="" readonly></td>
+			</tr>
+			<tr>
+				<td>Result: </td>
+				<td><input type="text" class="" name="result" value="" readonly></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		function showresult(){
+			var mcq = parseInt(document.myform.mcq.value);
+			var des = parseInt(document.myform.des.value);
+			var evd = parseInt(document.myform.evd.value);
+
+			var total = mcq + des + evd;
+			document.myform.totalm.value=total;
+
+			if(mcq>=80 && des>=60 && evd>=60){				
+				document.myform.result.value="You have passed";
+				document.myform.result.className="pass";
+			}
+			else{
+				document.myform.result.value="You have failed";
+				document.myform.result.className="fail";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prime with function</title>
+	<style>
+		.prime{
+			color: green;
+			font-size: 40px;
+		}
+		.notprime{
+			color: red;
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Prime Checker</h1>
+	<div id="outb"></div>
+	<script>
+		function prime_check(){
+			var n = parseInt(prompt("Enter a number"));
+
+			if(n==1){
+				document.getElementById("outb").className="notprime";
+				return n + " is not a prime number.";
+			}
+			else if(n==2){
+				document.getElementById("outb").className="prime";
+				return n + " is a prime number.";
+			}
+			else{
+				for(var i=2; i<=n/2; i++){
+					if(n%i==0){
+						document.getElementById("outb").className="notprime";
+						return n + " is not a prime number.";
+					}
+				}
+				document.getElementById("outb").className="prime";
+				return n + " is a prime number.";
+			}
+		}
+		var output = prime_check();
+		document.getElementById("outb").innerHTML=output;
+	</script>
+</body>
+</html>

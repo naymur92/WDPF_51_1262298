@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Personal Information</title>
+	<style>
+		.resultb{
+			font-size: 30px;
+			background-color: lightblue;
+			padding: 20px;
+		}
+		table, th{
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+	<h2>Personal Information</h2>
+	<form action="" name="myform">
+		<table width="400px">
+			<tr>
+				<th>Name</th>
+				<td><input type="text" name="fname" value="" placeholder="Enter your full name"></td>
+			</tr>
+			<tr>
+				<th>Gender</th>
+				<td>
+					Male: <input type="radio" name="gender" value="Male"> &nbsp;&nbsp;&nbsp;
+					Female: <input type="radio" name="gender" value="Female">
+				</td>
+			</tr>
+			<tr>
+				<th>District</th>
+				<td>
+					<select name="district" id="">
+						<option value="Dhaka">Dhaka</option>
+						<option value="Khulna">Khulna</option>
+						<option value="Kushtia">Kushtia</option>
+						<option value="Chuadanga">Chuadanga</option>
+						<option value="Jashore">Jashore</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Hobbies:</th>
+				<td>
+					Cricket <input type="checkbox" class="hobby_chk" name="hobby" value="Cricket">
+					Football <input type="checkbox" class="hobby_chk" name="hobby" value="Football">
+				</td>
+			</tr>
+			<tr>
+				<th>Profile</th>
+				<td><textarea name="profile" id="" cols="25" rows="5"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="SEND" onclick="getFormData()"></td>
+			</tr>
+		</table>
+	</form>
+
+	<hr>
+	<h2>Submitted Data</h2>
+	<div id="result"></div>
+
+	<script>
+		function getFormData(){
+			var name = document.myform.fname.value;
+			var gend = document.myform.gender.value;
+			var dist = document.myform.district.value;			
+			var prof = document.myform.profile.value;
+
+			var hob = "";
+			var inputElements = document.getElementsByClassName('hobby_chk');
+			for(var i=0; inputElements[i]; ++i){
+			      if(inputElements[i].checked){
+			           hob+= inputElements[i].value + ",";
+			      }
+			}
+			
+
+			var output = "";
+			output+= "Name = " + name + "<br>";
+			output+= "Gender = " + gend + "<br>";
+			output+= "District = " + dist + "<br>";
+			output+= "Hobbies = " + hob + "<br>";
+			output+= "Profile = " + prof;
+
+			document.getElementById("result").className="resultb";
+			document.getElementById("result").innerHTML=output;
+		}
+	</script>
+</body>
+</html>
