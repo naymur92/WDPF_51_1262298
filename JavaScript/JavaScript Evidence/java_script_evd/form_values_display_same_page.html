@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validtion</title>
+</head>
+<body>
+	<h1 id="demo"></h1>
+<script>
+function myFunction(){
+var name=document.formName.name.value;
+var gender=document.formName.gender.value;
+var phone=document.formName.phone.value;
+var remarks=document.formName.remarks.value;
+var location=document.formName.location.value;
+var courses = "";
+var info="";	
+
+	for (var i = 5; i < formName.length; i++) {
+				if(formName.elements[i].checked){
+					courses += formName.elements[i].value + ",";
+				}
+				
+			}	
+
+	
+  info += "<h1>You have submitted</h1>";
+  info +="<p>Name:"+ name + "</p>";
+  info += "<p>Gender:"+ gender + "</p>";
+// 	document.write("<p>Phone:"+ phone + "</p>");
+// 	document.write("<p>Remarks:"+ remarks + "</p>");
+// document.write("<p>Location:"+ location + "</p>");
+// 	document.write("<p>Courses:"+ courses + "</p>");
+	document.getElementById('demo').innerHTML = info;
+	
+
+}
+</script>
+<form name="formName">
+<strong>Your Name:&nbsp;</strong>
+<p><input type="text" name="name" placeholder="Enter Your Name" /></p>
+<strong>Contact No:&nbsp;</strong>
+<p><input type="text" name="phone" placeholder="Enter Contact number" /></p>
+<strong>Remarks:&nbsp;</strong>
+<p><textarea name="remarks" rows="8" cols="30" placeholder="Enter Remarks"></textarea></p>
+<strong>Gender:&nbsp;</strong>
+<p>
+	Male: <input type="radio" name="gender" value="male" />
+	Female: <input type="radio" name="gender" value="female" />
+</p>
+<strong>Courses:&nbsp;</strong>
+<p>
+	NT <input type="checkbox" name="courses[]" value="NT" />
+	IDA <input type="checkbox" name="courses[]" value="IDA" />
+	DDA <input type="checkbox" name="courses[]" value="DDA" />
+	ESAD <input type="checkbox" name="courses[]" value="ESAD" />
+</p>
+<strong>Location:&nbsp;</strong>
+<select name="location">
+	<option value="" hidden="">Select one</option>
+    <option value="Banani">Banani</option>
+    <option value="Dhanmondi">Dhanmondi</option>
+    <option value="Mirpur">Mirpur</option>
+</select>
+<br/><br/>
+<button onclick="myFunction()" type="button" name="submit">Open in a new window</button>
+</form>
+</center>
+</body>
+</html>

@@ -13,6 +13,9 @@
 		table, th{
 			text-align: left;
 		}
+		.boxwidth{
+			width: 200px;
+		}
 	</style>
 </head>
 <body>
@@ -21,7 +24,7 @@
 		<table width="400px">
 			<tr>
 				<th>Name</th>
-				<td><input type="text" name="fname" value="" placeholder="Enter your full name"></td>
+				<td><input type="text" class="boxwidth" name="fname" value="" placeholder="Enter your full name"></td>
 			</tr>
 			<tr>
 				<th>Gender</th>
@@ -33,7 +36,7 @@
 			<tr>
 				<th>District</th>
 				<td>
-					<select name="district" id="">
+					<select name="district" class="boxwidth">
 						<option value="Dhaka">Dhaka</option>
 						<option value="Khulna">Khulna</option>
 						<option value="Kushtia">Kushtia</option>
@@ -45,13 +48,13 @@
 			<tr>
 				<th>Hobbies:</th>
 				<td>
-					Cricket <input type="checkbox" class="hobby_chk" name="hobby" value="Cricket">
-					Football <input type="checkbox" class="hobby_chk" name="hobby" value="Football">
+					Cricket <input type="checkbox" name="hobby" value="Cricket">
+					Football <input type="checkbox" name="hobby" value="Football">
 				</td>
 			</tr>
 			<tr>
 				<th>Profile</th>
-				<td><textarea name="profile" id="" cols="25" rows="5"></textarea></td>
+				<td><textarea name="profile" id=""  class="boxwidth" rows="5"></textarea></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -71,11 +74,12 @@
 			var dist = document.myform.district.value;			
 			var prof = document.myform.profile.value;
 
-			var hob = "";
-			var inputElements = document.getElementsByClassName('hobby_chk');
+			var hob = [];
+			// var inputElements = document.getElementsByClassName('hobby_chk');
+			var inputElements = document.myform.hobby;
 			for(var i=0; inputElements[i]; ++i){
 			      if(inputElements[i].checked){
-			           hob+= inputElements[i].value + ",";
+			           hob[i] = inputElements[i].value;
 			      }
 			}
 			

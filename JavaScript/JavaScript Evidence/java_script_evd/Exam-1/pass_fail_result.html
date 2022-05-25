@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function result(){
+			var mcq = document.passfail.mcq.value;
+			var des = document.passfail.des.value;
+			var evd = document.passfail.evd.value;
+			// alert(mcq);
+			// alert(des);
+			// alert(evd);
+			if(mcq>=80 && des>=60 && evd>=60){
+				alert("Pass");
+			} else {
+				alert("Fail");
+			}
+		}
+	</script>
+	<form name="passfail">
+		<input type="text" name="mcq" placeholder="MCQ Marks"><br>
+		<input type="text" name="des" placeholder="Descriptive Marks"><br>
+		<input type="text" name="evd" placeholder="Evidence Marks"><br>
+		<input type="button" onclick="result()" value="Show Result">
+	</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Maximum Finder</title>
+</head>
+<body>
+	<h1>Maximum Finder</h1>
+	<script>
+		var n = parseInt(prompt("How many numbers you want to enter?"));
+		var numbers = [];
+
+		var x=1;
+		for(var i=0; i<n; i++){
+			numbers[i]=parseInt(prompt("Enter values: " + x + " th", "Number"));
+			x++;
+		}
+		var max=0;
+
+		for(var i in numbers){
+			if(max>numbers[i]){
+				max=max;
+			}
+			else{
+				max=numbers[i];
+			}
+		}
+		
+
+		document.write(max);
+	</script>
+</body>
+</html>

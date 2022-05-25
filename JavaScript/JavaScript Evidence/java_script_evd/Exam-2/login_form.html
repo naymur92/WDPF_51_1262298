@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function validate(){
+			var email = document.login.email.value;
+			var pass = document.login.password.value.length;
+			var pattern = email.search(/[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}/);
+			var status = false;
+			
+			if(pattern==-1){
+				alert ("Email address is invalid");
+			 	return false;
+			 } else {
+			 	status = true;
+			 }
+			if(pass<5){
+				alert ("Password must be 5 character");
+			 	return false;
+			 } else {
+			 	status =  true;
+			 }
+			 if(status==true){
+			 	alert ("All data are validted");
+			 }
+		}
+	</script>
+
+
+	<form name="login">
+		<input type="text" name="email" placeholder="Enter valid Email"><br>
+		<input type="password" name="password" placeholder="Enter password"><br>
+		<input type="button" name="submit" value="Login" onclick="validate()">
+	</form>
+	
+</body>
+</html>
