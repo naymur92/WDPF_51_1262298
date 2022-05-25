@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Maximum number finder</title>
+</head>
+<body>
+	<h1>Maximum number finder</h1>
+	<script>		
+		var numbers = [68, 58, 98, 69, 121, 174];
+
+		
+		var max=0;
+		var min=numbers[0];
+
+		for (var i in numbers){
+//Maximum Number
+			if(max>numbers[i]){
+				max = max;
+			}
+			else{
+				max = numbers[i];
+			}
+//Minimum number
+			if(min<numbers[i]){
+				min = min;
+			}
+			else{
+				min = numbers[i];
+			}
+		}
+		document.write("<h2>Maximum number is : " + max + "</h2>");
+		document.write("<h2>Minimum number is : " + min + "</h2>");
+	</script>
+</body>
+</html>

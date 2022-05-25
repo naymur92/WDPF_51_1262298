@@ -12,32 +12,43 @@
 		var c = 11;
 
 //Method 1
-		if(a>b){
-			if(a>c){
-				document.write(a + " is greater number.");
-			}
-			else{
-				document.write(c + " is greater number.")
-			}
-		}
-		else{
-			if(b>c){
-				document.write(b + " is greater number.")
-			}
-			else{
-				document.write(c + " is greater number.")
-			}
-		}
-
-//Method 2
-		// if(a>b && a>c){
-		// 	document.write(a + " is greater number.");
-		// }
-		// else if(b>c && b>a){
-		// 	document.write(b + " is greater number.");
+		// if(a>b){
+		// 	if(a>c){
+		// 		document.write(a + " is greater number.");
+		// 	}
+		// 	else{
+		// 		document.write(c + " is greater number.")
+		// 	}
 		// }
 		// else{
-		// 	document.write(c + " is greater number.");
+		// 	if(b>c){
+		// 		document.write(b + " is greater number.")
+		// 	}
+		// 	else{
+		// 		document.write(c + " is greater number.")
+		// 	}
+		// }
+
+//Method 2- Maximum number finder.
+		if(a>b && a>c){
+			document.write(a + " is greater number.<br>");
+		}
+		else if(b>c && b>a){
+			document.write(b + " is greater number.<br>");
+		}
+		else{
+			document.write(c + " is greater number.<br>");
+		}
+
+//Minimum number finder.
+		// if(a<b && a<c){
+		// 	document.write(a + " is smaller number.<br>");
+		// }
+		// else if(b<c && b<a){
+		// 	document.write(b + " is smaller number.<br>");
+		// }
+		// else{
+		// 	document.write(c + " is smaller number.<br>");
 		// }
 	</script>
 </body>

@@ -4,16 +4,66 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Result Calculator</title>
+	<style>
+		.boxwidth{
+			width: 200px;
+		}
+		#resultpass{
+			color: green;
+		}
+		#resultfail{
+			color: red;
+		}
+		#totalm{
+			color: #115EFB;
+		}
+	</style>
 </head>
 <body>
 	<form name="myform">
-		<input type="text" name="mcq" placeholder="Enter MCQ Number"><br>
-		<input type="text" name="des" placeholder="Enter Descriptive Number"><br>
-		<input type="text" name="evd" placeholder="Enter Evidence Number"><br>
-		<input type="button" onclick="" value="Click Here">
-	</form>
-	<div id="result"></div>
+		<fieldset>
+			<legend>Enter Marks</legend>
+			<input type="text" class="boxwidth" name="mcq" placeholder="Enter MCQ Number" value=""><br>
+			<input type="text" class="boxwidth" name="des" placeholder="Enter Descriptive Number" value=""><br>
+			<input type="text" class="boxwidth" name="evd" placeholder="Enter Evidence Number" value=""><br>
+		</fieldset>
+		
+		<input type="button" onclick="resultshow()" value="Show Result">
+		<input type="reset" onclick=""><br><br>
 
-	<script></script>
+		<table>
+			<tr>
+				<td>Your total Marks: </td>
+				<td><input type="text" id="totalm" class="boxwidth" name="marks" value=""></td>
+			</tr>
+			<tr>
+				<td>Your Result: </td>
+				<td><input type="text" id="" class="boxwidth" name="result" value=""></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		function resultshow(){
+			var mcq = parseInt(document.myform.mcq.value);
+			var des = parseInt(document.myform.des.value);
+			var evd = parseInt(document.myform.evd.value);
+
+			var passed = "You have passed.";
+			var failed = "You have failed.";
+
+			var total = mcq + des + evd;
+			document.myform.marks.value = total;
+
+			if(mcq>=80 && des>=60 && evd>=60){
+				document.myform.result.id = "resultpass";
+				document.myform.result.value= passed;
+			}
+			else{
+				document.myform.result.id = "resultfail";
+				document.myform.result.value= failed;
+			}
+		}
+	</script>
 </body>
 </html>
