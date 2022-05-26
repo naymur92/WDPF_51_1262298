@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Form</title>
+</head>
+<body>
+	<h2>Login Form</h2>
+	<form action="" name="loginform">
+		<table>
+			<tr>
+				<td>E-mail:</td>
+				<td><input type="text" name="email" placeholder="Enter your E-mail" value=""></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password" value=""></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" value="Login" onclick="validator()">
+					<input type="reset">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		function validator(){
+			var mail = document.loginform.email.value;
+			var pass = document.loginform.password.value.length;
+
+			var pattern = mail.search(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/);
+			var status = false;
+
+			if(pattern==-1){
+				alert("Email address is invalid.");
+				return false;
+			}
+			else{
+				status = true;
+			}
+
+			if(pass<5){
+				alert("Password must be 5 charecter");
+				return false;
+			}
+			else{
+				status = true;
+			}
+
+			if(status==true){
+				alert("All data are validated.");
+			}
+		}
+	</script>
+</body>
+</html>

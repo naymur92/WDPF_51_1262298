@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Email Validation</title>
+</head>
+<body>
+	<h1>Email Validation</h1>
+	<script>
+		var email = prompt("Enter an e-mail address.", "");
+		var atcounter = 0;
+		var dotcounter = 0;
+
+		for(var i in email){
+			if(email[i]=="@"){
+				atcounter ++;
+			}
+			if(email[i]=="."){
+				dotcounter ++;
+			}
+		}
+
+		if(atcounter==1 && dotcounter!=0){
+			alert("Your Email Address is valid.");
+		}
+		else{
+			alert("Your Email Address is invalid.");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fibonacci Series</title>
+	<style>
+		.output{
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<h2>Fibonacci Series</h2>
+	<div id="output"></div>
+
+	<script>
+		var n = parseInt(prompt("Enter how many trems?", ""));
+		var fibonacci = [];
+		fibonacci[0]=1;
+		fibonacci[1]=1;
+
+		for(var i=2; i<n; i++){
+			fibonacci[i]=fibonacci[i-1]+fibonacci[i-2];
+		}
+
+		var output = "";
+		for(var j in fibonacci){
+			output += fibonacci[j]+ "&nbsp;&nbsp;&nbsp;";
+		}
+
+		document.getElementById('output').innerHTML= output;
+	</script>
+</body>
+</html>

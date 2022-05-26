@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Array Sorting</title>
+	<style>
+		.output{
+			font-size: 30px;
+			color: #111F8A;
+		}
+	</style>
+</head>
+<body>
+	<h1>Ascending Sort</h1>
+	<div class="output"></div>
+
+	<script>
+		var n = parseInt(prompt("How many numbers you want to take?", ""));
+		var numbers = [];
+// Value taking loop
+		var x = 1;
+		for(var i=0; i<n; i++){
+			numbers[i]=parseInt(prompt("Enter number- "+ x + "th"));
+			x++;
+		}
+// Sorting Loop
+		var max;
+		for(var i=0; i<n; i++){
+			for(var j=i+1; j<n; j++){
+				if(numbers[i]>numbers[j]){
+					max=numbers[i];
+					numbers[i]=numbers[j];
+					numbers[j]=max;
+				}
+			}
+		}
+// Array Printing Loop
+		var output = "";
+		x = 1;
+		for(var i in numbers){
+			output += x + ". " + numbers[i] + "<br>";
+			x++;
+		}
+
+		document.getElementsByClassName('output')[0].innerHTML = output;
+	</script>
+</body>
+</html>
