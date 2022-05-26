@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SetInterval</title>
+</head>
+<body>
+	<button type="button" onclick="stop()">Stop</button>
+
+	<script>
+		var var1 = setInterval(color,500);
+
+		function color(){
+			var var2 = document.body;
+			var2.style.backgroundColor = var2.style.backgroundColor == "lightblue"? "lightgreen" : "lightblue";
+		}
+
+		function stop(){
+			clearInterval(var1);
+		}
+	</script>
+
+</body>
+</html>

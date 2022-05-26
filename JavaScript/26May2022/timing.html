@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var img1 = "javascript.png";
+		var img2 = "java.png";
+
+		var alpha;
+
+		var var2 = setInterval(interval, 300);
+		function interval(){
+			var var1 = document.cup.src;
+			// alert(var1);
+			var1 = var1==img1? img2 : img1;
+		}
+		// function timeOut(){
+		// 	window.setTimeout("document.cup.src=img2",5000);
+		// 	window.interval(alpha);
+		// }
+		function stop(){
+			clearInterval(var2);
+		}
+		
+
+	</script>
+
+	<img src="javascript.png" name="cup" alt="">
+	<button type="button" onclick="interval()">Interval</button>
+	<!-- <button type="button" onclick="timeOut()">TimeOut</button> -->
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" name="form1">
+		<input type="text" name="fullname"><br>
+		<input type="button" name="btname" value="Click Here" onclick="doIt()"><br>
+	</form>
+
+	<script>
+		function doIt(){
+			document.form1.fullname.value = "Naymur Rahman";
+			document.form1.btname.value = "You have clicked";
+		}
+	</script>
+</body>
+</html>

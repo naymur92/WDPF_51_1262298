@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grading</title>
+</head>
+<body>
+	<script>
+		var marks = parseInt(prompt("Enter your marks", ""));
+		var grade;
+
+		if(marks>=100*.80){
+			grade = "A+";
+		}
+		else if(marks>=100*.70){
+			grade = "A";
+		}
+		else if(marks>=100*.60){
+			grade = "B";
+		}
+		else{
+			grade = "F";
+		}
+
+		document.write("Your result is: ", grade);
+	</script>
+</body>
+</html>
