@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Data</title>
+</head>
+<body>
+	<form name="myData">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="fname"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>Phone Number:</td>
+				<td><input type="text" name="phone"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td>
+					Male<input type="radio" name="gender" value="male">
+					Female<input type="radio" name="gender" value="male">
+				</td>
+			</tr>
+			<tr>
+				<td>Language</td>
+				<td>
+					<select name="lang">
+						<option value="" hidden>Select language</option>
+						<option value="Bengali">Bengali</option>
+						<option value="English">English</option>
+						<option value="Arabic">Arabic</option>
+						<option value="Hindi">Hindi</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>About:</td>
+				<td><textarea name="about" cols="30" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="Register" onclick="formValidate()"></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		function formValidate(){
+			var a = document.myData.fname.value;
+			var b = document.myData.email.value;
+			var c = document.myData.phone.value;
+			var d = document.myData.gender.value;
+			var e = document.myData.lang.value;
+			var f = document.myData.about.value;
+
+			if(a==""){
+				alert("You have not entered Name");
+			}
+			else if(b==""){
+				alert("You have not entered Email");
+			}
+			else if(c==""){
+				alert("You have not entered Phone");
+			}
+			else if(d==""){
+				alert("You have not Select Gender");
+			}
+			else if(e==""){
+				alert("You have not Select Language");
+			}
+			else if(f==""){
+				alert("You have not entered About");
+			}
+			else{
+				alert("You have entered all form data");
+			}			
+		}		
+	</script>
+</body>
+</html>

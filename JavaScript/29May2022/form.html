@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form>
+		<input type="text" placeholder="Enter Name"><br>
+		<textarea cols="30" rows="10" placeholder="Enter Address"></textarea><br>
+
+		<select>
+			<option value="">Select one District</option>
+			<option value="Dhaka">Dhaka</option>
+			<option value="Sylhet">Sylhet</option>
+			<option value="Khulna">Khulna</option>
+		</select><br>
+		<button onclick="formFields()" type="button">Click Here</button>
+	</form>
+
+	<div id="display"></div>
+
+	<script>
+		function formFields(){
+			var length = document.forms[0].elements.length;
+			var output = "";
+
+			for(var i=0; i<length-1; i++){
+				output += document.forms[0].elements[i].value + "<br>";
+			}
+			document.getElementById("display").innerHTML = output;
+		}		
+	</script>
+</body>
+</html>

@@ -10,13 +10,15 @@
 		var img1 = "javascript.png";
 		var img2 = "java.png";
 
-		var alpha;
+		// var alpha;
 
-		var var2 = setInterval(interval, 300);
+		var var2 = setInterval(interval, 1000);
 		function interval(){
-			var var1 = document.cup.src;
+			var var1 = document.cup.getAttribute("src");
 			// alert(var1);
 			var1 = var1==img1? img2 : img1;
+			document.cup.src = var1;
+
 		}
 		// function timeOut(){
 		// 	window.setTimeout("document.cup.src=img2",5000);
@@ -25,12 +27,10 @@
 		function stop(){
 			clearInterval(var2);
 		}
-		
-
 	</script>
 
-	<img src="javascript.png" name="cup" alt="">
-	<button type="button" onclick="interval()">Interval</button>
-	<!-- <button type="button" onclick="timeOut()">TimeOut</button> -->
+	<img src="javascript.png" name="cup" height="400px"><br><br>
+	<button type="button" onclick="setInterval(interval, 1000)">Interval</button>
+	<button type="button" onclick="stop()">Stop</button>
 </body>
 </html>
