@@ -74,12 +74,14 @@
 			var dist = document.myform.district.value;			
 			var prof = document.myform.profile.value;
 
+
+//Checkbox data receiving loop
 			var hob = [];
 			// var inputElements = document.getElementsByClassName('hobby_chk');
-			var inputElements = document.myform.hobby;
-			for(var i=0; inputElements[i]; ++i){
-			      if(inputElements[i].checked){
-			           hob[i] = inputElements[i].value;
+			var cbox = document.myform.hobby;
+			for(var i=0; i<cbox.length; i++){
+			      if(cbox[i].checked){
+			           hob[i] = cbox[i].value;
 			      }
 			}
 			

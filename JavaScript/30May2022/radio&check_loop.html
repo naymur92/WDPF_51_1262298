@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form name="myform">
+		Pick one of the following as the most important: <br>
+		<input type="radio" name="imp" value="Cost"> Cost<br>
+		<input type="radio" name="imp" value="Reliability"> Reliability<br>
+		<input type="radio" name="imp" value="Reputation"> Reputation<br>
+		<input type="radio" name="imp" value="Ease of use"> Ease of use<br><br>
+
+		Which of the following do you plan to purchase with your computer? Check all that apply: <br>
+		<input type="checkbox" name="parts" value="Printer"> Printer <br>
+		<input type="checkbox" name="parts" value="High Capacity Disk"> High Capacity Disk <br>
+		<input type="checkbox" name="parts" value="Scanner"> Scanner <br>
+		<input type="checkbox" name="parts" value="Added Memory"> Added Memory <br><br>
+
+		<textarea name="result" id="" cols="50" rows="20"></textarea>
+		<input type="button" value="Sort It Out" onclick="show()">
+	</form>
+
+	<script>
+		function show(){
+			var display = "Your selected item's are: \n \n";
+
+			display += "";
+
+			var cont = document.myform.elements;
+			for(var i=0; i<cont.length; i++){
+				if(cont[i].checked){
+					display += cont[i].value + "\n";
+				}
+			}
+
+			document.myform.result.value = display;
+		}		
+	</script>
+</body>
+</html>
