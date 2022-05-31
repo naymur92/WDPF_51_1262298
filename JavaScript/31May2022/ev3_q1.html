@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Question 1</title>
+</head>
+<body>
+	<h1>Trainee Registration Form</h1>
+	<form name="myform">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="fname" placeholder="Enter your name"></td>
+			</tr>
+			<tr>
+				<td>Contact:</td>
+				<td><input type="text" name="cnumber" placeholder="Enter your phone number"></td>
+			</tr>
+			<tr>
+				<td>Remarks</td>
+				<td><textarea name="remarks" id="" cols="30" rows="10" placeholder="Write Remarks"></textarea></td>
+			</tr>
+			<tr>
+				<td>Sex:</td>
+				<td>
+					<input type="radio" name="sex" value="Male"> Male <br>
+					<input type="radio" name="sex" value="Female"> Female <br>
+				</td>
+			</tr>
+			<tr>
+				<td>Course:</td>
+				<td>
+					<input type="checkbox" name="course" value="NT"> NT <br>
+					<input type="checkbox" name="course" value="IAD"> IAD <br>
+					<input type="checkbox" name="course" value="DDD"> DDD <br>
+					<input type="checkbox" name="course" value="ESAD"> ESAD <br>
+				</td>
+			</tr>
+			<tr>
+				<td>Location:</td>
+				<td>
+					<select name="location">
+						<option value="" hidden>Select One</option>
+						<option value="Banani">Banani</option>
+						<option value="Dhanmondi">Dhanmondi</option>
+						<option value="Mirpur">Mirpur</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="Submit" onclick="show()"></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		function show(){
+			var a = document.myform.fname.value;
+			var b = document.myform.cnumber.value;
+			var r = document.myform.remarks.value;
+			var c = document.myform.sex.value;
+
+			var d = [];
+			var cbox = document.myform.course;
+			for(var i=0; i<cbox.length; i++){
+				if(cbox[i].checked){
+					d.push(cbox[i].value);
+				}
+			}
+			
+			var e = document.myform.location.value;
+
+			var output = "<h1>All Information</h1>";
+			output += "<b>Name: </b>" + a + "<br>";
+			output += "<b>Contact Number: </b>" + b + "<br>";
+			output += "<b>Remarks: </b>" + r + "<br>";
+			output += "<b>Sex: </b>" + c + "<br>";
+			output += "<b>Courses: </b>" + d + "<br>";
+			output += "<b>Location: </b>" + e + "<br>";
+
+			var myWindow = window.open("", "", "height=400,width=600,left=200,top=150");
+			myWindow.document.write(output);
+		}
+	</script>
+</body>
+</html>
