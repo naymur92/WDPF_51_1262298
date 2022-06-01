@@ -1,0 +1,22 @@
+h1, h2, h3{
+	color: #4709FA;
+}
+
+#para{
+	font-size: 22px;
+	color: #F12A2A;
+	background-color: #BCC6CB;
+}
+
+artical.main{
+	background-color: #B893EA;
+	border: 2px solid black;
+}
+
+.center{
+	text-align: center;
+}
+
+.large{
+	font-size: 60px;
+}
