@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Product Information Form</h1>
+	<form name="productdes">
+		<table>
+			<tr>
+				<td>Product Name</td>
+				<td><input type="text" name="productname" placeholder="Enter product name"></td>
+			</tr>
+			<tr>
+				<td>Product Details</td>
+				<td><textarea name="productdetails" cols="30" rows="10" placeholder="Enter product details"></textarea></td>
+			</tr>
+			<tr>
+				<td>Product Condition</td>
+				<td>
+					<input type="radio" name="pcondition" value="Brand New"> Brand New <br>
+					<input type="radio" name="pcondition" value="Second Hand"> Second Hand <br>
+					<input type="radio" name="pcondition" value="Refurbished"> Refurbished
+				</td>
+			</tr>
+			<tr>
+				<td>Categories</td>
+				<td>
+					<input type="checkbox" name="categorie" value="Shirt"> Shirt <br>
+					<input type="checkbox" name="categorie" value="Trouser"> Trouser <br>
+					<input type="checkbox" name="categorie" value="Pullover"> Pullover <br>
+					<input type="checkbox" name="categorie" value="Sweater"> Sweater <br>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="Submit" onclick="showData()"></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		function showData() {
+			var a = document.productdes.productname.value;
+			var b = document.productdes.productdetails.value;
+			var c = document.productdes.pcondition.value;
+			var d = [];
+
+			var cbox = document.productdes.categorie;
+			for(var i=0; i<cbox.length; i++){
+				if(cbox[i].checked){
+					d.push(cbox[i].value);
+				}
+			}
+
+			var output = "<h2>Submitted Informations</h2><br>";
+			output += "<b>Product Name= </b>" + a + "<br>";
+			output += "<b>Product Details= </b>" + b + "<br>";
+			output += "<b>Product Condition= </b>" + c + "<br>";
+			output += "<b>Categories= </b>" + d + "<br>";
+
+			var myWin = window.open("", "", "height=500,width=600,left=400,top=100");
+			myWin.document.write(output);
+		}
+	</script>
+</body>
+</html>

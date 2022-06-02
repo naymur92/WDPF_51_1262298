@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Search Engine</h1>
+	<form name="search">
+		<textarea name="content" cols="30" rows="10" placeholder="Put your content"></textarea><br>
+		<input type="text" name="sbox" placeholder="Enter your word"><br>
+		<input type="button" value="SEARCH" onclick="findWord()">
+	</form>
+
+	<script>
+		function findWord(){
+			var content = document.search.content.value;
+			var sbox = document.search.sbox.value;
+			
+			var result = content.search(sbox);
+			if(result==-1){
+				alert("Dosen't match with this word " + sbox);
+			}
+			else{
+				alert("Yes, found this word " + sbox + " Which index is: " + result);
+			}
+		}
+		
+	</script>
+</body>
+</html>
