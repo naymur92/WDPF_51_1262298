@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu</title>
+	<style>
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			border: 1px solid black;
+			width: 110.5px;
+		}
+		li a{
+			display: block;
+			width: 100px;
+			text-align: center;
+			background-color: #F1CCCC;
+			padding: 5px;
+			text-decoration: none;
+			color: black;
+			border-bottom: 1px solid #7E7B7B;
+		}
+		li:last-child a{
+			border-bottom: none;
+		}
+		li a:hover{
+			background-color: #202C36;
+			color: white;
+			/*border-bottom: 1px solid black;*/
+			transition: 0.3s ease-in-out;
+		}
+		.active{
+			background-color: #7AE4F1;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#" class="active">Home</a></li>
+		<li><a href="#">News</a></li>
+		<li><a href="#">Products</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
+</body>
+</html>

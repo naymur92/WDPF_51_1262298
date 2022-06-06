@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form name="myform">
+		<input type="text" name="mydate"><br>
+		<input type="button" value="Show Day" onclick="showday()">
+	</form>
+
+	<script>
+		function showday(){
+			var mydate = document.myform.mydate.value;
+			var d = new Date(mydate);
+			// var dateoutput = d.getDate();
+
+			var myday = d.getDay();
+
+			// var yearoutput = d.getYear();
+
+			// alert("Day of the month= " + dateoutput);
+			// alert("Year= " + yearoutput);
+
+			// alert(myday);
+
+			// switch(myday){
+			// 	case 0: alert("Today is Sunday.");
+			// 	break;
+			// 	case 1: alert("Today is Monday.");
+			// 	break;
+			// 	case 2: alert("Today is Tuesday.");
+			// 	break;
+			// 	case 3: alert("Today is Wednesday.");
+			// 	break;
+			// 	case 4: alert("Today is Thursday.");
+			// 	break;
+			// 	case 5: alert("Today is Friday.");
+			// 	break;
+			// 	case 6: alert("Today is Saturday.");
+			// 	break;
+			// }
+
+			var day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+			
+			alert("Today is " + day[myday]);
+		}
+	</script>
+</body>
+</html>
