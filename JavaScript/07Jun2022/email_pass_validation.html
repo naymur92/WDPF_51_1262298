@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Login Form</h1>
+	<form name="myform">
+		<input type="text" name="email" placeholder="Enter valid Email"><br>
+		<input type="password" name="pass" placeholder="Password (Min 6 characters)"><br>
+		<input type="button" value="LOGIN" onclick="emailValidation()">
+	</form>
+
+	<script>
+		function emailValidation(){
+			var email = document.myform.email.value;
+			var pass = document.myform.pass.value.length;
+
+			var status = false;
+
+			var pattern = email.search(/^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/);
+			if(pattern==-1){
+				alert("Enter a valid Email");
+				return false;
+			}
+			else{
+				status = true;
+			}
+			if(pass<6){
+				alert("Password must be 6 characters long.");
+				return false;
+			}
+			else{
+				status = true;
+			}
+
+			if(status==true){
+				alert("All data are validated.")
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var email = prompt("Enter your Email", "");
+
+
+		// var counterAt = 0;
+		// var counterDot = 0;
+		// for(var i in email){
+		// 	if(email[i]=="@"){
+		// 		counterAt++;
+		// 	}
+		// 	if(email[i]=="."){
+		// 		counterDot++;
+		// 	}
+		// }
+		// if(counterAt==1&&counterDot==1){
+		// 	alert("Email Address is correct.");
+		// }
+		// else{
+		// 	alert("Email address is Wrong.");
+		// }
+
+		var find = email.search(/^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/);
+		if(find==0){
+			alert("Email Address is correct.");
+		}
+		else{
+			alert("Email address is Wrong.");
+		}
+	</script>
+</body>
+</html>
