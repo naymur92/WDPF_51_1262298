@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Billing Information</h1>
+	<form name="myform">
+		<table>
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" name="fname"></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="lname"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td>
+					<input type="radio" name="gender" value="Male"> Male
+					<input type="radio" name="gender" value="Female"> Female
+				</td>
+			</tr>
+			<tr>
+				<td>Languages:</td>
+				<td>
+					<input type="checkbox" name="language" value="Telugu"> Telugu
+					<input type="checkbox" name="language" value="English"> English
+					<input type="checkbox" name="language" value="Hindi"> Hindi
+				</td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td><textarea name="address" cols="30" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td>State:</td>
+				<td>
+					<select name="state">
+						<option value="" hidden>Choose State</option>
+						<option value="Khulna">Khulna</option>
+						<option value="Dhaka">Dhaka</option>
+						<option value="Chattogram">Chattogram</option>
+						<option value="Barisal">Barisal</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Zip:</td>
+				<td><input type="text" name="zip"></td>
+			</tr>
+			<tr>
+				<td>Credit Card Type:</td>
+				<td>
+					<select name="creditCard">
+						<option value="" hidden>Choose Credit Card</option>
+						<option value="Visa Card">Visa Card</option>
+						<option value="Master Card">Master Card</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="Submit" onclick="showMe()"></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+		function showMe(){
+			var firstName = document.myform.fname.value;
+			var lastName = document.myform.lname.value;
+			var sex = document.myform.gender.value;
+			var checkedLanguages = [];
+
+			var languages = document.myform.language;
+			for(var i in languages){
+				if(languages[i].checked){
+					checkedLanguages.push(languages[i].value);
+				}
+			}
+
+			var e_mail = document.myform.email.value;
+			var addr = document.myform.address.value;
+			var state = document.myform.state.value;
+			var zipCode = document.myform.zip.value;
+			var card = document.myform.creditCard.value;
+
+			var result = "<table style='width:550; height:400; border: 1px; border-collapse: collapse; text-align:left;'><caption><b>Submitted Informations</b></caption>";
+			result += "<tr><th>Full Name:</th><td>" + firstName + " " + lastName + "</td></tr>";
+			result += "<tr><th>Gender:</th><td>" + sex + "</td></tr>";
+			result += "<tr><th>Languages:</th><td>" + checkedLanguages + "</td></tr>";
+			result += "<tr><th>Email:</th><td>" + e_mail + "</td></tr>";
+			result += "<tr><th>Address:</th><td>" + addr + "</td></tr>";
+			result += "<tr><th>State:</th><td>" + state + "</td></tr>";
+			result += "<tr><th>Zip:</th><td>" + zipCode + "</td></tr>";
+			result += "<tr><th>Credit Card Type:</th><td>" + card + "</td></tr></table>";
+
+			var myWin = window.open("", "", "width=600,height=500,top=100,left=400");
+			myWin.document.write(result);
+		}
+	</script>
+</body>
+</html>
