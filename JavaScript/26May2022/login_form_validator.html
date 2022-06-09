@@ -32,7 +32,7 @@
 			var mail = document.loginform.email.value;
 			var pass = document.loginform.password.value.length;
 
-			var pattern = mail.search(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/);
+			var pattern = mail.search(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/);
 			var status = false;
 
 			if(pattern==-1){

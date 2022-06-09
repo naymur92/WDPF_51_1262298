@@ -7,11 +7,15 @@
 </head>
 <body>
 	<script>
-		var motors = new Array("Totoya", "BMW", "TATA", "Ferari", "Corolla");
+		var email = prompt("Enter Email","");
 
-		motors.unshift("Honda", "Tesla"); //Add element to start
-
-		document.write(motors);
+		var pattern = email.search(/^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/);
+		if(pattern==-1){
+			alert("Email is invalid");
+		}
+		else{
+			alert("Email is valid");
+		}
 	</script>
 </body>
 </html>

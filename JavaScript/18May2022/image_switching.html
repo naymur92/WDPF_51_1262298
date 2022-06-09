@@ -6,9 +6,7 @@
 	<title>Image switching</title>
 </head>
 <body>
-	<h1>Image switching on Mouse over</h1>
-
-	
+	<h1>Image switching on Mouse over</h1>	
 
 	<script>
 		function func1(){
@@ -17,25 +15,8 @@
 		function func2(){
 			document.sample1.src = "cat.jpg";
 		}
-
-		function cname(){
-			var x = document.myform.fname.value;
-			document.getElementById("fn").innerHTML = x;
-		}
 	</script>
 
-	<a href="" onmouseover="func1()" onmouseout="func2()"><img src="cat.jpg" name="sample1" alt="" width="400"></a><br>
-
-
-	<form action="" name="myform">
-		<input type="" value="Rahim" name="fname"><br>
-		<button onclick="cname()" type="button">Click Here</button>
-	</form>
-	<br>
-
-	<br><br>
-	
-
-	<h2 id="fn"></h2>
+	<a href="" onmouseover="func1()" onmouseout="func2()"><img src="cat.jpg" name="sample1" alt="" width="400"></a><br> 
 </body>
 </html>

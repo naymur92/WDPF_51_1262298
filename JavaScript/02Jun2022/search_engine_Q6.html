@@ -16,14 +16,16 @@
 	<script>
 		function findWord(){
 			var content = document.search.content.value;
+			content = content.toLowerCase();
 			var sbox = document.search.sbox.value;
+			sbox = sbox.toLowerCase();
 			
 			var result = content.search(sbox);
 			if(result==-1){
 				alert("Dosen't match with this word " + sbox);
 			}
 			else{
-				alert("Yes, found this word " + sbox + " Which index is: " + result);
+				alert("Yes, found this word: '" + sbox + "'\n Which index is: " + result);
 			}
 		}
 		

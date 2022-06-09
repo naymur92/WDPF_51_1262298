@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Fibonacci Series</h1>
+	<script>
+		// program to display fibonacci sequence using recursion
+		function fibonacci(num) {
+			if(num < 2) {
+				return num;
+			}
+			else {
+				return fibonacci(num-1) + fibonacci(num - 2);
+			}
+		}
+
+		// take nth term input from the user
+		const nTerms = prompt('Enter the number of terms: ');
+
+		if(nTerms <=0) {
+			alert('Enter a positive integer.');
+		}
+		else {
+			for(let i = 0; i < nTerms; i++) {
+				document.write(fibonacci(i)+ "&nbsp;&nbsp;&nbsp;&nbsp;");
+			}
+		}
+	</script>
+</body>
+</html>

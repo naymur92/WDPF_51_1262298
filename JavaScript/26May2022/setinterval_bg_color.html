@@ -10,13 +10,13 @@
 	<button type="button" onclick="start()">Start</button>
 
 	<script>
-		var var1 = setInterval(color,500);
-
 		function color(){
 			var var2 = document.body;
 			var2.style.backgroundColor = var2.style.backgroundColor == "lightblue"? "lightgreen" : "lightblue";
 			// document.body.style.backgroundColor=var2;
 		}
+		var var1 = setInterval(color,500);
+		
 
 		function stop(){
 			clearInterval(var1);
