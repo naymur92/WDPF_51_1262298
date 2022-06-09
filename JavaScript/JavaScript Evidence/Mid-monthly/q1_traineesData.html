@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Trainee's Data</title>
+	<style>
+		.boxwidth{
+			width: 200px;
+		}
+		table{
+			width: 400px;
+			margin: 0 auto;
+		}
+		h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Trainee Registration Form</h1>
+	<form name="myform">
+		<table>
+			<tr>
+				<th>Name:</th>
+				<td><input type="text" name="traineeName" placeholder="Enter Your Name" class="boxwidth"></td>
+			</tr>
+			<tr>
+				<th>Contact:</th>
+				<td><input type="text" name="cNumber" placeholder="Enter Contact Number" class="boxwidth"></td>
+			</tr>
+			<tr>
+				<th>Remarks:</th>
+				<td><textarea name="remarks" class="boxwidth" rows="10" placeholder="Write Remarks"></textarea></td>
+			</tr>
+			<tr>
+				<th>Sex:</th>
+				<td>
+					<input type="radio" name="gender" value="Male">Male <br>
+					<input type="radio" name="gender" value="Female">Female
+				</td>
+			</tr>
+			<tr>
+				<th>Courses:</th>
+				<td>
+					<input type="checkbox" name="course" value="NT">NT <br>
+					<input type="checkbox" name="course" value="IAD">IAD <br>
+					<input type="checkbox" name="course" value="DDD">DDD <br>
+					<input type="checkbox" name="course" value="ESAD">ESAD <br>
+				</td>
+			</tr>
+			<tr>
+				<th>Location:</th>
+				<td>
+					<select name="location" class="boxwidth">
+						<option value="" hidden>Select One</option>
+						<option value="Banani">Banani</option>
+						<option value="Dhanmondi">Dhanmondi</option>
+						<option value="Mirpur">Mirpur</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td><input type="button" value="Submit" onclick="showData()"></td>
+			</tr>			
+		</table>
+	</form>
+
+	<script>
+		function showData(){
+			var traineeName = document.myform.traineeName.value;
+			var cNumber = document.myform.cNumber.value;
+			var remarks = document.myform.remarks.value;
+			var gender = document.myform.gender.value;
+			var course = [];
+
+			var courses = document.myform.course;
+			for(var i in courses){
+				if(courses[i].checked){
+					course.push(courses[i].value);
+				}
+			}
+
+			var location = document.myform.location.value;
+
+			var output = "<h1>Submitted Informations</h1>";
+			output += "<table border='1' style='width:350px;height:200px;border-collapse:collapse;text-align:left;background-color:lightblue;border-radius:5px;'>"
+
+			output += "<tr><th>Name: </th><td>" + traineeName + "</td></tr>";
+			output += "<tr><th>Contact: </th><td>" + cNumber + "</td></tr>";
+			output += "<tr><th>Remarks: </th><td>" + remarks + "</td></tr>";
+			output += "<tr><th>Sex: </th><td>" + gender + "</td></tr>";
+			output += "<tr><th>Courses: </th><td>" + course + "</td></tr>";
+			output += "<tr><th>Location: </th><td>" + location + "</td></tr></table>";
+
+			var myWin = window.open("","","width=500, height=400, left=350, top=150");
+			myWin.document.write(output);
+		}
+	</script>
+</body>
+</html>

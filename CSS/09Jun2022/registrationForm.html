@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<style>
+		input[type=email], input[type=password]{
+			padding: 10px;
+			width: 100%;
+			border-radius: 5px;
+			display: block;
+			border: 1px solid #ccc;
+			margin: 10px 0;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		input[type=email]{
+			background-image: url(email.png);
+			background-position: 10px 7px;
+			padding-left: 50px;
+			background-repeat: no-repeat;
+		}
+		#login{
+			border: 2px solid red;
+			border-radius: 8px;
+			background-color: #F4CACA;
+			padding: 20px;
+			width: 500px;
+			margin: 0 auto;
+		}
+		input[type=submit]{
+			padding: 10px;
+			width: 100%;
+			border-radius: 5px;
+			border: none;
+			margin: 10px 0;
+		}
+		input[type=submit]:hover{
+			background-color: #A9F4E5;
+			transition: 0.1s ease-in;
+			cursor: pointer;
+		}
+		h1{
+			text-align: center;
+		}
+		input[type=email]:focus, input[type=password]:focus{
+			background-color: #F7ECEC;
+			outline: none;
+		}
+		#login textarea{
+			width: 100%;
+			height: 100px;
+			resize: none;
+			padding: 10px;
+			margin: 15px 0;
+			border-radius: 5px;			
+			box-sizing: border-box;
+			border: none;
+		}
+		#login textarea:focus{
+			background-color: #F7ECEC;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="login">
+		<h1>Registration Form</h1>
+		<form action="">
+			<label for="email">Email</label>
+			<input type="email" name="email" placeholder="Email">
+			<label for="pass">Password</label>
+			<input type="password" name="pass" placeholder="Password">
+			<label for="addr">Address</label>
+			<textarea name="addr" cols="30" rows="10" placeholder="Address"></textarea>
+			<input type="submit" name="sumbit" value="REGISTER">
+		</form>
+	</div>
+	
+</body>
+</html>

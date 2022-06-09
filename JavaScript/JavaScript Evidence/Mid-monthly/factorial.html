@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>factorial</title>
+	<style>
+		.container{
+			width: 500px;
+			height: 400px;
+			border-radius: 5px;
+			padding: 20px;
+			margin: 0 auto;
+			background-color: lightblue;
+			text-align: center;
+		}
+		input[type=text]{
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			box-sizing: border-box;
+			margin: 15px 0;
+			text-align: center;
+			font-size: 20px;
+		}
+		input[type=button]{
+			width: 150px;
+			border-radius: 5px;
+			border: none;
+			padding: 10px;
+			cursor: pointer;
+		}
+		input[type=button]:hover{
+			background-color: green;
+			color: white;
+		}
+		#output{
+			font-size: 30px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Factorial Finder</h1>
+		<form name="fact">
+			<input type="text" name="input" placeholder="Enter a number" onfocus="hideResult()"><br>
+			<input type="button" value="Show Factorial" onclick="factorial()">
+		</form>
+		<div id="output"></div>
+	</div>
+	
+	<script>
+		function factorial(){
+			let n = document.fact.input.value;
+			function calculation(n){
+				if(n==0){
+					return 1;
+				}
+				return n*calculation(n-1);
+			}
+			var result = calculation(n);
+			document.getElementById("output").innerHTML = "Factorial for " + n + " = " + result;		
+		}
+		function hideResult(){
+			document.getElementById("output").innerHTML = "";
+			document.fact.input.value = "";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Factorial Finder</title>
+	<style>
+		#output{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Factorial Finder</h1>
+	<div id="output"></div>
+	<script>
+		function factorial(n){
+			if(n==0){
+				return 1;
+			}
+			return n*factorial(n-1);
+		}
+		var result = factorial(prompt("Enter a number"));
+		document.getElementById("output").innerHTML = "Factorial= " + result;
+	</script>
+</body>
+</html>
