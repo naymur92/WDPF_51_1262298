@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cross Browser Layout</title>
+	<style>
+		.wrapper{
+			width: 100%;
+			min-width: 550px;
+			max-width: 1000px;
+			margin: 0 auto;
+			/*background-color: #B3A2A2;*/
+			background-image: url(icon.png);
+			background-repeat: repeat-y;
+			background-position: 33% 0;
+			border-left: 1px solid black;
+			border-right: 1px solid black;
+		}
+		.header{
+			background-color: lightblue;
+			padding: 10px;
+			background-color: #99B9FA;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		.sidebar{
+			width: 33%;
+			padding: 10px;
+			float: left;
+		}
+		.main{
+			margin-left: 36%;
+			margin-left: -moz-calc(33% + 20px);
+			margin-left: -webkit-calc(33% + 20px);
+			margin-left: calc(33% + 20px);
+			padding: 10px 20px;
+			background-color: #fff;
+		}
+		.footer{
+			background-color: #887C7C;
+			color: white;
+			padding: 10px;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<h1>Site Heading</h1>
+		</div>
+		<div class="sidebar">
+			<h2>Sidebar Heading</h2>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate rem excepturi accusamus itaque reprehenderit perspiciatis in tempore nesciunt assumenda ab explicabo maiores laborum nisi quae doloribus, non unde fugit quod.</p>
+		</div>
+		<div class="main">
+			<h2>Main Heading</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda voluptas odio repellat cumque sapiente possimus numquam quas quidem ipsa quae fuga libero, quaerat amet, suscipit non incidunt, omnis consequatur tempore id iure debitis molestiae nam placeat necessitatibus. Pariatur nostrum facere, sapiente est veritatis nesciunt praesentium magni quaerat culpa nulla deserunt, nemo perferendis alias voluptate unde asperiores optio dolore, quae! Molestiae, ut. Sequi voluptas repudiandae accusamus architecto minus explicabo culpa fugit quae, esse aliquam veniam dolorem atque veritatis adipisci soluta quaerat quas sapiente consequuntur omnis possimus ipsa corrupti sed vel? Esse voluptate, aspernatur, eveniet impedit voluptates, consequuntur ad saepe nostrum aliquam, ipsum ipsa ducimus facilis eum optio iure qui provident culpa itaque rem accusantium iste cum. Quas dolore necessitatibus architecto perspiciatis incidunt ab reiciendis obcaecati officia repellat placeat, natus, molestiae quidem praesentium. Cum, temporibus consequuntur ex nostrum molestiae. Consequatur et sapiente, iste facilis assumenda, dolorum. Possimus error et veritatis, corporis aperiam facilis pariatur vitae alias magnam nam sapiente unde consectetur recusandae optio asperiores quibusdam repudiandae. Illum vel sunt velit ipsam hic facere nisi, accusamus repellat cum recusandae nihil adipisci ratione sint explicabo culpa magnam quia iste autem alias quis. Laborum commodi voluptatem exercitationem dolorum et perspiciatis, consequatur porro voluptate nihil aliquam similique nemo, rem aperiam, a veniam. Ut vel et neque dicta numquam aut minus aliquam veritatis ea aspernatur id modi at animi fuga eum maxime, placeat deserunt vero natus debitis sequi beatae commodi omnis? Praesentium velit facere repellat. Cum laudantium sint maxime dolore vero hic laboriosam accusantium voluptates voluptatibus suscipit. Eos veritatis earum saepe molestiae, pariatur libero perspiciatis nemo, error sit alias, debitis provident sapiente autem ea atque quidem consequatur. Amet qui labore quam eveniet facere, molestiae! Consequuntur, animi magnam doloremque amet exercitationem perferendis dignissimos! Quo possimus molestias, totam fugit, dolore dignissimos, quibusdam, enim eius distinctio id tempore ullam rerum.</p>
+		</div>
+		<div class="footer">
+			<span>Footer</span>
+		</div>
+	</div>
+</body>
+</html>
