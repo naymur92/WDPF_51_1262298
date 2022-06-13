@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.wrapper{
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    background-color: #fff;
+}
+
+.wrapper .navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    margin-top: 30px;
+}
+
+.navbar .logo{
+    margin-left: 50px;
+}
+
+.menubar ul li{
+    float: left;
+}
+.menubar ul li a{
+    display: inline-block;
+    padding: 10px;
+    font-weight: 800;
+    color: black;
+    line-height: 80px;
+}
+.menubar ul li a:hover{
+    background-color: #ddd;
+    transition: 0.3s ease;
+}
+.myBtn{
+    display: block;
+    border: none;
+    padding: 8px 20px;
+    font-weight: 800;
+    background-color: yellow;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.banner{
+    width: 70%;
+    height: 80%;
+    position: absolute;
+    top: 200px;
+    left: 50px;
+}
+.app-text{
+    width: 45%;
+    float: left;
+    padding-left: 30px;
+}
+.app-text h4{
+    text-transform: uppercase;
+    color: #B5B4B4;
+    font-size: 18px;
+}
+.app-text h1{
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 1;
+    position: relative;
+    margin-top: 30px;    
+}
+
+.btn-group{
+    width: 100%;
+    margin-top: 50px;
+}
+.btn-group .signup-btn{
+    cursor: pointer;
+    display: block;
+    color: #000;
+    width: 150px;
+    float: left;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #FE8383;
+    border-radius: 30px;
+    text-align: center;
+}
+.play-btn-inner{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    cursor: pointer;
+    margin-left: 10px;
+    border: 2px solid transparent;
+    background-color: black;
+    color: #fff;
+}
+.play-btn-inner i{
+    padding: 15px 16px;
+    font-size: 16px;
+}
+.play-btn span{
+    font-size: 18px;
+    position: relative;
+    top: 15px;
+    margin: auto 15px;
+}
