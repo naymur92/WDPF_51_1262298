@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>Bootstrap Tooltip</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Tooltip Example</h1>
+		<a href="#" id="about" title="Some information for the page.">Mouse over Here</a>
+
+		<button class="btn btn-success">Button 1</button>
+		<button class="btn btn-default">Button 2</button>
+		<button class="btn btn-danger">Button 3</button>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#about').tooltip();
+			$('.btn-success').tooltip({title: "Button 1", placement: "bottom"});
+			$('.btn-default').tooltip({title: "Button 2", placement: "top"});
+			$('.btn-danger').tooltip({title: "Button 3", placement: "left"});
+		});
+	</script>
+</body>
+</html>
