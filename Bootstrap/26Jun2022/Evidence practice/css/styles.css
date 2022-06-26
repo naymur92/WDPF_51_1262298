@@ -1,0 +1,74 @@
+.jumbotron{
+	background-color: #337ab7 !important;
+	color: white !important;
+	border-radius: 0 !important;
+	margin-bottom: 4px !important;
+}
+ul.nav{
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.nav-pills li::after{
+	content:"";
+    background: #ddd;
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    height: 50%;
+    width: 1px;
+}
+.nav-pills li:last-child::after{
+	background: none;
+}
+div.side-bar{
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 4px;
+}
+ul.nav-tabs{
+	border-top: 40px solid #337ab7;
+	margin-bottom: 40px;
+	margin-top: 10px;
+}
+ul.nav-tabs li{
+	border-bottom: 1px solid #ddd;
+}
+.nav-tabs{
+	border-bottom: none !important;
+}
+ul.nav-tabs a{
+	color: black !important;
+}
+.search-box{
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 4px;
+}
+.search-box .well{
+	background-color: #337ab7;
+	border-radius: 0;
+	text-transform: uppercase;
+	color: white;
+	font-weight: 600;
+}
+.search-bar{
+	border: 1px solid #ddd;
+	padding: 4px;
+}
+.search-bar input[type=text]{
+	width: 70%;
+}
+.search-bar img{
+	width: 100%;
+	margin: 10px 0;
+}
+h2.well{
+	text-transform: uppercase;
+}
+footer{
+	background-color:  #337ab7;
+	text-align: center;
+	margin-top: 10px;
+	padding: 15px;
+	color: white;
+}
