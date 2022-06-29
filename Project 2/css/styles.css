@@ -20,8 +20,8 @@ body{
 }
 section.search-bar form{
 	position: relative;
-	bottom: 280px;
-	left: 21.5vw;
+	top: -150px;
+	left: 28vw;
 	z-index: 1;
 }
 .search-bar input[type=text]{
