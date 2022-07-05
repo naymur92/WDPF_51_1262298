@@ -18,7 +18,12 @@
 ?>
 
 <h1>$_GET superGlobal</h1>
-<a href="superGlobals.php?name=Robbany">Click Here</a>
+<a href="superGlobals.php?name=Naymur&phone=01737036324&age=30">Click Here</a>
 <?php
-    print_r($_GET);
+    echo $_GET['name'];
+    echo "<br>";
+    echo $_GET['phone'];
+    echo "<br>";
+    echo $_GET['age'];
+    echo "<br>";
 ?>
