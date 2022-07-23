@@ -10,7 +10,6 @@
     <?php
     if(isset($_POST['submit'])){
         $guess = 120;
-
         if($_POST['mynum']==$guess){
             echo "Congratulations!";
         }
