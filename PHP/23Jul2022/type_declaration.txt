@@ -1,0 +1,3 @@
+https://brainbell.com/php/type-declarations-hints.html
+https://www.infoq.com/articles/php7-new-type-features/
+https://www.etutorialspoint.com/index.php/tutorial/php-scalar-type-declaration

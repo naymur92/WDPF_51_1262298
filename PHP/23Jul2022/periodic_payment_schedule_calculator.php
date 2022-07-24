@@ -46,8 +46,11 @@
     // Round periodic payment to two decimals
     $periodicPayment = round($periodicPayment,2);
     $rows = amortizationTable($paymentNumber, $periodicPayment, $balance, $monthlyInterest);
+    
+    //Testing
     // echo "<pre>";
     // var_dump($rows);
+    
     // Create table
     echo "<table border='1' width='600'>";
     echo "<tr> <th>Payment Number</th> <th>Balance</th> <th>Payment</th> <th>Principal</th> <th>Interest</th></tr>";
