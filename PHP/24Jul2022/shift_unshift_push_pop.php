@@ -4,7 +4,7 @@
     $districts = array("Chuadanga", "Kushtia", "Dhaka");
     print_r($districts);
 
-    echo "Array shift. Remove data from begining. \n";
+    echo "Array shift. Remove data from begining and return it. \n";
     array_shift($districts);
     print_r($districts);
 
@@ -16,8 +16,9 @@
     array_push($districts, "Meherpur");
     print_r($districts);
 
-     echo "Array pop. Remove data from end. \n";
-    array_pop($districts);
+    echo "Array pop. Remove data from end and return it. \n";
+    $x = array_pop($districts);
+    echo $x . "\n";
     print_r($districts);
 
 ?>
