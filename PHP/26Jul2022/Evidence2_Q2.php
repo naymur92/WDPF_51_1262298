@@ -34,13 +34,21 @@
         //creating table
         echo "<table>
                 <tr>
+                    <th>SL No.</th>
                     <th>Country Name</th>
                     <th>Capital</th>
                 </tr>";
 
+        $sr = 1;
+
         //printing data into table
         foreach($countries as $country => $capital){
-            echo "<tr><td>$country</td> <td>$capital</td></tr>";
+            echo "<tr>
+                    <td>$sr</td>
+                    <td>$country</td>
+                    <td>$capital</td>
+                </tr>";
+            $sr ++;
         }
 
         //Table closing

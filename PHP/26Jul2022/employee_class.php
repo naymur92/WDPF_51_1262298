@@ -3,7 +3,7 @@
     class Employee{
         private $title;
         private $name;
-        public const AGE = 20;
+        public const AGE = 30;
 
         public function getName(){
             return $this->name;

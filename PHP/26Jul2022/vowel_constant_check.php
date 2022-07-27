@@ -31,7 +31,7 @@
 
         function vowelConstant($l){
             $vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U");
-
+            
             if($l == ""){
                 echo "<h3 class='empty'>Please Enter a letter first!</h3>";
                 return;
