@@ -33,14 +33,14 @@
         .vowel{
             color: green;
         }
-        .constant{
+        .consonant{
             color: blue;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Vowel-Constant Finder</h1>
+        <h1>Vowel-Consonant Finder</h1>
 
         <form action="" method="post">
             <input type="text" name="letter" placeholder="Enter a letter">
@@ -49,10 +49,10 @@
 
         <?php
             if(isset($_POST['submit'])){
-                vowelConstant($_POST['letter']);
+                vowelConsonant($_POST['letter']);
             }
 
-            function vowelConstant($letter){
+            function vowelConsonant($letter){
                 $vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U");
 
                 if($letter==""){
@@ -64,7 +64,7 @@
                     echo "<h3 class='vowel'>{$letter} is vowel.</h3>";
                 }
                 else{
-                    echo "<h3 class='constant'>{$letter} is constant.</h3>";
+                    echo "<h3 class='consonant'>{$letter} is consonant.</h3>";
                 }
             }
         ?>
