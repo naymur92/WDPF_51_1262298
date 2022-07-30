@@ -20,18 +20,20 @@
 <body>
     <h1>Result Form</h1>
     <form action="" method="post">
-        <input type="text" name="id">
+        <input type="text" name="id" placeholder="Enter your ID">
         <input type="submit" name="submit" value="SEARCH">
     </form>
 
     <?php
 
+    //Class creation
     class student
     {
         //fields
         public $id;
         public $name;
         public $batch;
+
         public $result;
         public $lines;
 
@@ -64,6 +66,8 @@
 
     if (isset($_POST['submit'])) {
         $id = $_POST['id'];
+
+        //object creation
         $st1 = new student;
 
         if ($id == "") {

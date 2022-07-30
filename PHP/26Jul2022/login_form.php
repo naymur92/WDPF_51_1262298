@@ -40,33 +40,31 @@
 
         //Checking Blank Form
         if ($login == "" && $email == "") {
-            echo "<h3 class='empty'>Please Enter Login Name and E-mail first.";
-            return;
+            echo "<h3 class='empty'>Please Enter Login Name and E-mail first!</h3>";
+            return 0;
         }
         
         //Checking Login Name
         if($login==""){
-            echo "<h3 class='empty'>Please Enter Login Name first.";
-            // return;
+            echo "<h3 class='empty'>Please Enter Login Name first!</h3>";
         } else if (strlen($login) > 8 || strlen($login) < 4) {
-            echo "<h3 class='invalid'>Login must be 4 to 8";
+            echo "<h3 class='invalid'>Login must be 4 to 8!</h3>";
         } else{
             $validlogin = 1; //Set login valid
         }
 
         //Checking Email
         if($email==""){
-            echo "<h3 class='empty'>Please Enter E-mail first.";
-            // return;
+            echo "<h3 class='empty'>Please Enter E-mail first.</h3>";
         } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo "<h3 class='invalid'>E-mail is Invalid.";
+            echo "<h3 class='invalid'>E-mail is Invalid.</h3>";
         } else{
             $validemail = 1; //Set email valid
         }
 
         //Success Output
-        if ($validemail == 1 && $validlogin==1) {
-            echo "<h3 class='validated'>You have successfully logged in.";
+        if ($validlogin == 1 && $validemail==1) {
+            echo "<h3 class='validated'>You have successfully logged in.</h3>";
         }
     }
         

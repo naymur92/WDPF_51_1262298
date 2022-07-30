@@ -20,7 +20,7 @@
 <body>
     <h2>Login Form</h2>
     <form action="" method="post">
-        <input type="text" name="login" placeholder="Enter Login Name" value="<?php if (isset($_POST['login'])) echo $_POST['login']; ?>"><br>
+        <input type="text" name="login" placeholder="Enter Login Name" value="<?php if (isset($login)) echo $login; ?>"><br>
         <input type="text" name="email" placeholder="Enter E-mail" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>"><br>
         <input type="submit" name="submit" value="LOGIN">
     </form>
