@@ -49,6 +49,9 @@
                         } else if(trim($result)=="Pass"){
                             echo "<h3 class='text-green'>Student Result: {$result}</h3>";                            
                         }
+                    } else{
+                        echo "<h2 class='text-red'>Your ID does not match!";
+                        break;
                     }
                 }
             }
