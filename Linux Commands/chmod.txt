@@ -1,0 +1,3 @@
+//Control who can access files, search directories, and run scripts................
+
+sudo chmod 777 -R /opt/lampp/htdocs/WDPF_51_1262298/PHP/03Aug2022/Uploads/
