@@ -8,7 +8,7 @@
     echo fgets($fh);
     // echo "<pre>";
     // print_r($fh1);
-
+    
     while(!feof($fh)){
         echo fgets($fh). "<br>\n";
     }
