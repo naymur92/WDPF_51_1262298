@@ -17,48 +17,12 @@
     </form>
     <?php
         extract($_POST);
-        $to = "naymur92@gmail.com";
-        // if(mail($to, $email, $subject, $message)){
-        //     echo "Sent Successfully";
-        // }
-
-           
-    ?>
-
-    <?php
-
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\Exception;
-
-        require 'vendor/autoload.php';
-        // $mail = new PHPMailer(true);
-
-        $mail = new PHPMailer(true);
-
-        try {
-            $mail->SMTPDebug = 2;									
-            $mail->isSMTP();											
-            $mail->Host	 = 'smtp.gfg.com;';					
-            $mail->SMTPAuth = true;							
-            $mail->Username = 'user@gfg.com';				
-            $mail->Password = 'password';						
-            $mail->SMTPSecure = 'tls';							
-            $mail->Port	 = 587;
-
-            $mail->setFrom($email, $name);		
-            $mail->addAddress($to);
-            $mail->addAddress($to);
-            
-            $mail->isHTML(true);								
-            $mail->Subject = $subject;
-            $mail->Body = $message;
-            $mail->AltBody = $message;
-            $mail->send();
-            echo "Mail has been sent successfully!";
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $sender = "naymur92@gmail.com";
+        if(mail($to, $email, $subject, $message)){
+            echo "Sent Successfully";
         }
 
+           
     ?>
 
 </body>
