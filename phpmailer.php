@@ -13,14 +13,17 @@
 
     try {
         //Server settings
-        $mail->SMTPDebug = 2;                      //Enable verbose debug output
+        $mail->SMTPDebug  = 2;                  //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.mail.yahoo.com';                   //Set the SMTP server to send through
+        $mail->Host       = '';                   //Set the SMTP server to send through
+                            //smtp.mail.yahoo.com
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'naymur92@yahoo.com';                   //SMTP username
-        $mail->Password   = 'ifqxnklkvxlupmxl';                     //SMTP password
-        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->Port       = 587;              //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Username   = '';                   //SMTP username
+                            //naymur92@yahoo.com
+        $mail->Password   = '';                     //SMTP password
+                            //ifqxnklkvxlupmxl
+        $mail->SMTPSecure = 'tls';              //Enable implicit TLS encryption
+        $mail->Port       = 587;                //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('naymur92@yahoo.com');   //Sender
