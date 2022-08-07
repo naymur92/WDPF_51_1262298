@@ -1,0 +1,13 @@
+01_fseek_ftell_rewind.php
+02_reading_directory_contents.php
+03_scandir.php
+04_rmdir_with_recursive_function.php
+05_rmdir_only.php
+06_rename.php
+07_touch.php
+08_passthru.php
+09_escapeshell_arg_cmd.php
+output.txt
+testfile newname.txt
+testfile.txt
+Testing deleteDirectory

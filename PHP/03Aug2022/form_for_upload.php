@@ -33,7 +33,7 @@
 
             $errors = array();
 
-            if($size > 1024*1024){
+            if($size > 500*1024){
                 $errors[] = "Size must be within 500KB";
             }
             if(!in_array($ext, $fileTypes)){
