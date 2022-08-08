@@ -21,14 +21,14 @@
             private $size;
             private $tmpname;
             private $dest;
-            private $moved = 0;
+            private $moved;
 
             public $errors = array();
 
             // Set destination address
-            public function __construct()
+            public function destFolder($folderLocation)
             {
-                $this->dest = "/opt/lampp/htdocs/WDPF_51_1262298/PHP/File Uploader_Uploaded Files";
+                $this->dest = $folderLocation;
             }
 
             // Set file detailes
@@ -76,11 +76,11 @@
                     $this->moved = 1;
                }
             }
-
-
-            public function retriveFileAddress(){
+            
+            // Return file path to user
+            public function relativePath($path){
                 if($this->moved == 1){
-                    return "../../File Uploader_Uploaded Files/".$this->name;
+                    return $path.$this->name;
                 }
             }
 
@@ -89,6 +89,14 @@
         if(isset($_POST['submit'])){
             // Creating object
             $objFile = new fileUpload;
+
+            // Set the uploading folder location
+            $loc = "/opt/lampp/htdocs/WDPF_51_1262298/PHP/File Uploader_Uploaded Files";            
+            $objFile -> destFolder($loc);
+
+            // Set Uploaded folder relative path
+            $path = "../../File Uploader_Uploaded Files/";
+
             $objFile->setDetails($_FILES);
             $objFile->moveUploadedFile();
         }
@@ -98,7 +106,7 @@
 
     <!-- Show the image -->
     <br>
-    <img src="<? echo $objFile->retriveFileAddress(); ?>" alt="">
+    <img src="<? echo $objFile->relativePath($path); ?>" alt="" width="400">
 
 </body>
 </html>
