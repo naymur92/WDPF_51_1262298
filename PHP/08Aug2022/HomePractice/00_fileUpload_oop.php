@@ -85,6 +85,8 @@
             }
 
         }
+        // Closing class
+
 
         if(isset($_POST['submit'])){
             // Creating object
@@ -99,8 +101,7 @@
 
             $objFile->setDetails($_FILES);
             $objFile->moveUploadedFile();
-        }
-        
+        }        
     
     ?>
 
