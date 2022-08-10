@@ -1,5 +1,5 @@
 <?php
 
-    echo sha1('abcd');
+    echo sha1('efgh')."\n";
 
 ?>

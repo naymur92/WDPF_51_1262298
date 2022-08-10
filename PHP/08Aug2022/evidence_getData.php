@@ -35,15 +35,21 @@
             $inputs[] = $_POST['email'];
             $inputs[] = $_POST['phone'];
 
-            // Open the file handler with write mode
-            $fh = fopen("output.txt", 'a+');
+            // Open the file handler in write mode
+            $fh = fopen("output.txt", 'a');
+
+            //empty value identifier
+            $empty = 0;
 
             // Start a loop for writing each data
             foreach($inputs as $input){
-                fwrite($fh, $input." | ");
+                if($input != null) {
+                    fwrite($fh, $input." | ");
+                    $empty = 1;
+                }
             }
             // Enter a new line
-            fwrite($fh, "\n");
+            if($empty == 1) fwrite($fh, "\n");
 
             // Close the handlers
             fclose($fh);

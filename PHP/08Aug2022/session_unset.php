@@ -1,14 +1,16 @@
 <?php
 
     session_start();
+    // echo session_id()."<br>";
+    echo "<pre>";
 
+    $_SESSION['name'] = "Dipu";
+    $_SESSION['age'] = 26;
+    
     print_r($_SESSION);
-
-    // $_SESSION['name'] = "Dipu";
-    // $_SESSION['age'] = 26;
 
     // unset($_SESSION['age']);
 
-    session_destroy();
+    // session_destroy();
 
 ?>

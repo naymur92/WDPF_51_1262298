@@ -4,12 +4,15 @@
     if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])) {
         // Read the authentication file into an array
         $authFile = file("/opt/lampp/htdocs/WDPF_51_1262298/PHP/08Aug2022/authFile.txt");
+        
         // Search array for authentication match
         foreach ($authFile as $line) {
             list($user, $hash) = explode(":", $line);
-            if ($_SERVER['PHP_AUTH_USER'] == $user && sha1($_SERVER['PHP_AUTH_PW']) == trim($hash))
-            $authorized = true;
-            break;
+            if ($_SERVER['PHP_AUTH_USER'] == $user && sha1($_SERVER['PHP_AUTH_PW']) == trim($hash)) {
+                $authorized = true;
+                break;
+            }
+           
         }
     }
 
