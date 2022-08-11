@@ -9,7 +9,11 @@
     $api_key = "&appid={$OpenWeather['api_key']}";
     $api_url = $base_url . $weather_url . $api_key;
     $weather = json_decode(file_get_contents($api_url));
+
     echo "<pre>";
-    print_r($weather);
+    // print_r($weather);
+    echo "</pre>";
+
+    // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
 ?>
