@@ -1,0 +1,24 @@
+https://www.mysqltutorial.org/
+######Mysql Server connection#####
+mysql -h localhost -u root -p
+## To see all databases ##
+show databases;
+## Create a database ##
+create database wdpf51;
+## Select a databse ##
+use wdpf51;
+### All columns from a table #####
+select * from employees;
+### Specific columns from a table #####
+SELECT employeeNumber, lastName, firstName FROM employees;
+### Order by Ascending or Descending ######
+SELECT employeeNumber, lastName, firstName FROM employees order by employeeNumber;
+SELECT employeeNumber, lastName, firstName FROM employees order by lastName, firstName;
+SELECT employeeNumber, lastName, firstName FROM employees order by lastName desc;
+
+### condition with where clause ######
+SELECT employeeNumber, lastName, firstName, officeCode FROM employees WHERE officeCode = 4
+SELECT employeeNumber, lastName, firstName, email FROM employees WHERE officeCode = 1 AND jobTitle = 'Sales Rep'; 
+
+## Distinct value ##
+SELECT DISTINCT country  FROM customers ORDER BY country;
