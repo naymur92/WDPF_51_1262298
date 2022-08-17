@@ -17,16 +17,18 @@
         if(isset($_POST['submit'])){
             // print_r($_FILES['file']);
             $size = $_FILES['file']['size'];
-            $tmp_name = $_FILES['file']['tmp_name'];
-            $name = $_FILES['file']['name'];
+            $type = $_FILES['file']['type'];
+            // Supported types
+            $types = array("image/jpeg", "image/png", "document/pdf");
 
+            // For storing error
             $error = array();
 
-            if($_FILES['file']['type'] != "image/jpeg"){
-                $error[] = "File must be an image file";
+            if(!in_array($type, $types)){
+                $error[] = "File must be an image or pdf file";
             }
-            if($size > 500*1024){
-                $error[] = "File must up to 400 KB";
+            if($size > 400*1024){
+                $error[] = "File size must up to 400 KB";
             }
 
             if(count($error) > 0){
