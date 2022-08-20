@@ -7,6 +7,7 @@ show databases;
 create database wdpf51;
 ## Select a databse ##
 use wdpf51;
+
 ### All columns from a table #####
 select * from employees;
 ### Specific columns from a table #####
