@@ -22,7 +22,7 @@
     
         extract($_POST);
         if(isset($submit)){
-            $sql = "INSERT INTO students values ('$id', '$name', '$email', '$phone')";
+            $sql = "INSERT INTO students VALUES ('$id', '$name', '$email', '$phone')";
             if($db -> query($sql)) echo "<p>Upload Success</p>";
 
             // if($db -> affected_rows > 0) echo "Successfully Inserted";

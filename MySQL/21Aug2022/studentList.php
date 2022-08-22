@@ -23,7 +23,15 @@
                 $sql = "SELECT * FROM students";
                 $result = $db -> query($sql);
                 echo "<h2>Total record found: $result->num_rows</h2>";
+
+                // $data = $result -> fetch_assoc();
+                // print_r($data);
+                // $data = $result -> fetch_assoc();
+                // print_r($data);
+
                 while($data = $result -> fetch_assoc()){
+                    // echo "<pre>";
+                    // print_r($data);
                     ?>
                         <tr>
                             <td><?php echo $data['student_id'] ?></td>
