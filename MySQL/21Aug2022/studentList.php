@@ -31,9 +31,9 @@
                             <td><?php echo $data['student_email'] ?></td>
                             <td><?php echo $data['student_phone'] ?></td>
                             <td>
-                                <a href="delete.php?id=<?php echo $data['student_id'] ?>" onclick="return confirm('Are you sure?')"><span class="glyphicon glyphicon-trash"></span></a>
+                                <a href="student_delete.php?id=<?php echo $data['student_id'] ?>" onclick="return confirm('Are you sure?')"><span class="glyphicon glyphicon-trash"></span></a>
 
-                                <a href="edit.php?id=<?php echo $data['student_id'] ?>"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="student_edit.php?id=<?php echo $data['student_id'] ?>"><span class="glyphicon glyphicon-pencil"></span></a>
                             </td>
 
                         </tr>
