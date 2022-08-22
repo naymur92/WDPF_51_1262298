@@ -1,0 +1,38 @@
+SELECT employeeNumber, lastName, firstName FROM employees ORDER BY firstName;
+
+SELECT employeeNumber, lastName, firstName FROM employees ORDER BY firstName DESC;
+
+select employeeNumber, lastName, firstName from employees order by firstName desc;
+
+select employeeNumber, lastName, email, jobTitle from employees where jobTitle='Sales Rep';
+
+select employeeNumber, lastName, email, jobTitle from employees where jobTitle='Sales Rep' and officeCode=1;
+
+select employeeNumber, lastName, email, jobTitle from employees where jobTitle='Sales Rep' or officeCode=1;
+
+select employeeNumber, firstName, email, jobTitle from employees where jobTitle='Sales Rep' or officeCode in(1,2);
+
+select employeeNumber, firstName, email, jobTitle, officeCode from employees where jobTitle='Sales Rep' and officeCode in(2,3);
+
+select orderNumber, shippedDate, status, customerNumber from orders where customerNumber between 100 and 150;
+
+select orderNumber, shippedDate, status from orders where shippedDate between '2004-01-01' and '2004-12-31';
+
+select employeeNumber, firstName, email from employees where firstName like 'd%';
+
+select employeeNumber, firstName, email from employees limit 2, 7;
+
+select count(*) from employees;
+
+select count(*) as total from employees;
+
+select sum(amount) as 'Total Amount' from payments;
+
+select customerNumber, sum(amount) as 'Total Amount' from payments group by customerNumber;
+
+select customerNumber, sum(amount) as 'Total Amount' from payments group by customerNumber order by sum(amount) desc;
+
+select customerNumber, city, postalCode, country, salesRepEmployeeNumber from customers where salesRepEmployeeNumber is null;
+
+update employees set lastName='Rahman', firstName='Naymur', email='naymur@gmail.com', jobTitle='Web Developer' where employeeNumber=1002;
+

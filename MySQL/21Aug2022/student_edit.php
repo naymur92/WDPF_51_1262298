@@ -9,13 +9,24 @@
 </head>
 <body>
     <?php
-    
-        $id1 = $_REQUEST['id'];
-        // echo $id1;
+        $id1 = $_GET['id1'];
+        extract($_POST);
+        if(isset($submit)){
+            $sql = "UPDATE students SET student_id='$id', student_name = '$name', student_email = '$email', student_phone = '$phone' WHERE student_id = '$id1'";
+            $db -> query($sql);
 
-        $sql = "SELECT * FROM students WHERE student_id= '$id1'";
+            // if($db -> affected_rows > 0) echo "Successfully Inserted";
+        }
+    
+        
+        // echo $id1;
+        $sql = "SELECT * FROM students WHERE student_id = '$id1'";
         $result = $db->query($sql);
         $data = $result->fetch_assoc();
+        // define("oldid", $data['student_id']);
+        // $oldid = $data['student_id'];
+
+        
     
     ?>
     <h1>Student Entry Form</h1>
@@ -29,14 +40,12 @@
     <hr>
     <a href="studentList.php">Student List</a>
     <?php
-    
-        extract($_POST);
         if(isset($submit)){
-            $sql = "UPDATE students SET student_name = '$name', student_email = '$email', student_phone = '$phone' WHERE student_id = '$id1'";
-            if($db -> query($sql)) echo "<p>Updated Success</p>";
-
-            // if($db -> affected_rows > 0) echo "Successfully Inserted";
+            if($db->affected_rows > 0){
+                echo "<p>Update Success</p>";
+            }
         }
+        
     ?>
 </body>
 </html>

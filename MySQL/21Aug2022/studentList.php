@@ -41,7 +41,7 @@
                             <td>
                                 <a href="student_delete.php?id=<?php echo $data['student_id'] ?>" onclick="return confirm('Are you sure?')"><span class="glyphicon glyphicon-trash"></span></a>
 
-                                <a href="student_edit.php?id=<?php echo $data['student_id'] ?>"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="student_edit.php?id1=<?php echo $data['student_id'] ?>"><span class="glyphicon glyphicon-pencil"></span></a>
                             </td>
 
                         </tr>
