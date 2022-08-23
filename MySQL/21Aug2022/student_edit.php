@@ -9,24 +9,13 @@
 </head>
 <body>
     <?php
-        $id1 = $_GET['id1'];
-        extract($_POST);
-        if(isset($submit)){
-            $sql = "UPDATE students SET student_id='$id', student_name = '$name', student_email = '$email', student_phone = '$phone' WHERE student_id = '$id1'";
-            $db -> query($sql);
-
-            // if($db -> affected_rows > 0) echo "Successfully Inserted";
-        }
-    
+        // Get id from link
+        $id1 = $_GET['id1'];       
         
-        // echo $id1;
+        // get row data
         $sql = "SELECT * FROM students WHERE student_id = '$id1'";
         $result = $db->query($sql);
         $data = $result->fetch_assoc();
-        // define("oldid", $data['student_id']);
-        // $oldid = $data['student_id'];
-
-        
     
     ?>
     <h1>Student Entry Form</h1>
@@ -40,12 +29,15 @@
     <hr>
     <a href="studentList.php">Student List</a>
     <?php
+        extract($_POST);
         if(isset($submit)){
+            $db -> query("UPDATE students SET student_id='$id', student_name='$name', student_email='$email', student_phone='$phone' WHERE student_id='$id1'");
+            
             if($db->affected_rows > 0){
-                echo "<p>Update Success</p>";
+                // echo "<p>Update Success</p>";
+                header("Location:student_edit.php?id1=$id");    // passing new id to address bar
             }
         }
-        
     ?>
 </body>
 </html>
