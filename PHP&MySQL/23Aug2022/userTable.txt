@@ -1,0 +1,4 @@
+create table users(id tinyint auto_increment not null primary key,
+name varchar(30) not null,
+email varchar(30) not null unique,
+password char(40) not null);
