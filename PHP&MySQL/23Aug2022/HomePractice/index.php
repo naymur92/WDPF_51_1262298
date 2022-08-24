@@ -89,7 +89,7 @@
                         <td>
                             <a href="studentDelete.php?id=<?php echo $data['student_id'] ?>" onclick="confirm: ('Are You Sure?')"><i class="fa fa-trash fa-2x"></i></a>
                             
-                            <a href="" onclick="openWin('studentEdit.php?id=<?php echo $data["student_id"] ?>')"><i class="fa fa-pencil fa-2x"></i></a>
+                            <a href="" onclick='openWin("<?php echo "studentEdit.php?id={$data['student_id']}" ?>")'><i class="fa fa-pencil fa-2x"></i></a>
                         </td>
                     </tr>
 
@@ -107,8 +107,8 @@
         var height = 350;   // Set Height
         var scrHeight = screen.height;
         var scrWidth = screen.width;
-        var posLeft = Math.round((scrWidth-width)/2);   // Calculate left position of window
         var posTop = Math.round((scrHeight-height)/2);  // Calculate top position of windows
+        var posLeft = Math.round((scrWidth-width)/2);   // Calculate left position of window
         
         // Function for opening window
         let editForm;
