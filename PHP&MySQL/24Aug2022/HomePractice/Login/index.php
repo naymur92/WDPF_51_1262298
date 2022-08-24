@@ -1,4 +1,7 @@
-<?php include_once("dbconfig.php"); ?>
+<?php
+    include_once("dbconfig.php");
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,28 +36,30 @@
                         <li class="nav-item">
                             <a class="nav-link" href="dashboard.php">Dashboard</a>
                         </li>
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Action 1</a>
-                                <a class="dropdown-item" href="#">Action 2</a>
-                            </div>
-                        </li> -->
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search"> -->
-                        <!-- <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">LOGIN</button> -->
-                        <button class="form-control btn btn-outline-dark my-2 my-sm-0" onclick="openWin();">Login</button>
+                    <form class="form-inline my-1 my-lg-0">
+                        <?php
+                            if(isset($_SESSION['status'])){
+                        ?>
+                            <span class="mx-2 text-primary"><?php echo "Welcome, " . $_SESSION['email']; ?></span>
+                            <a href="logout.php" class="btn btn-outline-danger form-control nav-link">Log Out</a>
+                        <?php
+                            } else{
+                        ?>
+                            <button class="form-control btn btn-outline-dark my-2 my-sm-0" onclick="openWin();">Login</button>
+                        <?php
+                            }
+                        ?>
                     </form>
                 </div>
             </nav>
 
-            <div class="jumbotron">
+            <div class="jumbotron my-1">
                 <h1>Welcome</h1>
                 <h3>This is home page</h3>
             </div>
 
-            <div class="jumbotron text-center my-4 p-2" style="background-color: #e3f2fd;">
+            <div class="jumbotron text-center my-1 p-2" style="background-color: #e3f2fd;">
                 <h6>&copy; Naymur Rahman</h6>
             </div> 
       </div>
@@ -67,12 +72,14 @@
         var scrWidth = screen.width;
         var posTop = Math.round((scrHeight-height)/2);  // Calculate top position of windows
         var posLeft = Math.round((scrWidth-width)/2);   // Calculate left position of window
+        // document.write(scrHeight);
+        // document.write(posTop,", ", posLeft);
         
         // Function for opening window
         let loginForm;
         // let link;
         function openWin() {
-            loginForm = window.open("login.php", "", "width="+width+",height="+height+",top="+posTop+",left="+posLeft);
+            loginForm = window.open("login.php", "", "width=" + width + ",height=" + height + ",top=" + posTop + ",left=" + posLeft);
         }
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,14 +1,8 @@
 <?php
     include_once("dbconfig.php");
     session_start();
-    if(!isset($_SESSION['name'])){
+    if(!isset($_SESSION['status'])){
         header("Location:index.php");
-    } else{
-        ?>
-        <script>
-            loignForm.close();
-        </script>
-        <?php
     }
 ?>
 <!doctype html>
@@ -45,35 +39,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="dashboard.php">Dashboard</a>
                         </li>
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Action 1</a>
-                                <a class="dropdown-item" href="#">Action 2</a>
-                            </div>
-                        </li> -->
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search"> -->
-                        <!-- <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">LOGIN</button> -->
-                        <button class="form-control btn btn-outline-dark my-2 my-sm-0" onclick="openWin();">Login</button>
-                        <button class="form-control btn btn-outline-dark my-2 my-sm-0"><a href="logout.php">Log Out</a></button>
+                        <span class="mx-2 text-primary"><?php echo "Welcome, " . $_SESSION['email']; ?></span>
+                        <a href="logout.php" class="btn btn-outline-danger form-control nav-link">Log Out</a>
                     </form>
                 </div>
             </nav>
 
-            <div class="container">
-                <div class="jumbotron">
-                    <h2>Welcome to Dashboard</h2>
-                    <?php
-                        if(isset($_SESSION['name'])){
-                            echo "<h3>Welcome, ". $_SESSION['name']. "</h3>";
-                        }
-                    ?>
-                </div>
+            <div class="jumbotron my-1">
+                <h2>Welcome to Dashboard</h2>
+                <?php
+                    if(isset($_SESSION['name'])){
+                        echo "<h3>Welcome, ". $_SESSION['name']. "</h3>";
+                    }
+                ?>
             </div>
 
-            <div class="jumbotron text-center my-4 p-2" style="background-color: #e3f2fd;">
+            <div class="jumbotron text-center my-1 p-2" style="background-color: #e3f2fd;">
                 <h6>&copy; Naymur Rahman</h6>
             </div> 
       </div>

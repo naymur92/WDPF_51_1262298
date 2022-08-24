@@ -15,7 +15,7 @@
   <body>
       <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="jumbotron bg-primary text-white text-center">
                     <h1>Student Entry Form</h1>                    
                 </div>
@@ -25,19 +25,19 @@
                     <table>
                         <tr>
                             <th>student_id</th>
-                            <td><input type="text" name="id" placeholder="Enter ID" size="35"></td>
+                            <td><input type="text" class="form-control" name="id" placeholder="Enter ID" size="35"></td>
                         </tr>
                         <tr>
                             <th>student_name</th>
-                            <td><input type="text" name="name" placeholder="Enter Name" size="35"></td>
+                            <td><input type="text" class="form-control" name="name" placeholder="Enter Name" size="35"></td>
                         </tr>
                         <tr>
                             <th>student_email</th>
-                            <td><input type="text" name="email" placeholder="Enter Email" size="35"></td>
+                            <td><input type="text" class="form-control" name="email" placeholder="Enter Email" size="35"></td>
                         </tr>
                         <tr>
                             <th>student_phone</th>
-                            <td><input type="text" name="phone" placeholder="Enter Phone" size="35"></td>
+                            <td><input type="text" class="form-control" name="phone" placeholder="Enter Phone" size="35"></td>
                         </tr>
                         <tr>
                             <th></th>
@@ -61,7 +61,7 @@
 
 
             <!-- Students List -->
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="jumbotron bg-primary text-white text-center">
                     <h1>Student's List</h1>
                 </div>

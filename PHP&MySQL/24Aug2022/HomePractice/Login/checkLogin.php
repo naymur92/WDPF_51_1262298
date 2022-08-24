@@ -16,7 +16,13 @@
             session_start();
             $data = $result->fetch_assoc();
             $_SESSION['name'] = $data['name'];
-            // header("Location:login.php");
+            $_SESSION['email'] = $data['email'];
+            $_SESSION['status'] = "logged_in";
+            ?>
+                <script>
+                    window.close();
+                </script>
+        <?php
         }
     }
 ?>
