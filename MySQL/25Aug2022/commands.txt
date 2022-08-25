@@ -1,0 +1,11 @@
+create user 'jason'@'localhost' identified by 'abcd';
+
+use mysql; select * from user;
+
+drop user 'jason'@'localhost';
+
+rename user 'jason'@'localhost' to 'dipu'@'localhost';
+
+grant select on wdpf51.* to 'naymur'@'localhost';
+
+revoke delete on wdpf51.* from 'naymur'@'localhost';
