@@ -21,7 +21,7 @@
             <input type="submit" name="submit" value="LOGIN">
         </form>
         <?php
-            session_start();
+            // session_start();
             if(isset($_GET['m'])){
                 // echo $_SESSION['msg'];
                 echo $_GET['m'];

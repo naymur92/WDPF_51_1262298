@@ -9,7 +9,7 @@
     $result = $db->query($sql);
     if($result->num_rows != 1){
         $msg = "Email or Password may be wrong";
-        session_start();
+        // session_start();
         header("Location:index.php?m=$msg");
     } else{
         session_start();
