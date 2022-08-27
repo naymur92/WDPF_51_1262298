@@ -1,0 +1,35 @@
+create view customers_usa as select customerNumber, customerName, addressLine1, country, phone from customers where country='USA';
+
+select customerNumber, customerName, city, country, employeeNumber, lastName, email, jobTitle from customers, employees where employees.employeeNumber=customers.salesRepEmployeeNumber;
+
+select c.customerNumber, c.customerName, c.city, c.country, e.employeeNumber, e.firstName, e.email, e.jobTitle from customers c, employees e where e.employeeNumber= c.salesRepEmployeeNumber;
+
+rename table customers_with_employees_view to customerListWithEmployees;
+
+delimiter //
+create trigger after_student_entry
+after insert on students
+for each row
+begin
+insert into students_table_log values(NULL, new.student_id, new.student_name, new.student_email, new.student_phone, 'INSERT', CURRENT_TIMESTAMP());
+end //
+delimiter ;
+
+delimiter //
+create trigger after_student_update
+after insert on students
+for each row
+begin
+insert into students_table_log
+values(null, new.student_id, new.student_name, new.student_email, new.student_phone, 'UPDATE', current_timestamp());
+end //
+delimiter ;
+
+DELIMITER //
+create trigger before_student_delete
+after delete on students
+for each row
+begin
+insert into students_table_log values(null, old.student_id, old.student_name, old.student_email, old.student_phone, 'DELETE', current_timestamp());
+END //
+DELIMITER ;
