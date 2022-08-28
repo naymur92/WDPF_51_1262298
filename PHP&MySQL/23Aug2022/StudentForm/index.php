@@ -76,7 +76,8 @@
 
                     <?php
                         // Code for output table data
-                        $sql = "SELECT * FROM students";
+                        // $sql = "SELECT * FROM students";
+                        $sql = "CALL getStudents()";
                         $result = $db -> query($sql);
                         while($data = $result -> fetch_assoc()){
                     ?>

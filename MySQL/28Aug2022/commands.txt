@@ -1,0 +1,42 @@
+delimiter //
+    create procedure GetCustomer()
+    begin 
+        select
+            customerName,
+            city,
+            postalCode,
+            country
+        from
+            customers
+        order by customerName;
+    end
+    //
+delimiter ;
+
+
+student_info table:
+stud_id | stud_code | stud_name | subject | marks | phone       |
++---------+-----------+-----------+---------+-------+-------------+
+|       1 |       101 | Mark      | English |    68 | 34545236987 |
+|       2 |       102 | Joseph    | Physics |    70 | 98765435659 |
+|       3 |       103 | John      | Maths   |    70 | 14523698745 |
+|       4 |       104 | Barack    | Maths   |    90 | 25632587456 |
+|       5 |       105 | Rinky     | Maths   |    85 | 85745823654 |
+|       6 |       106 | Adam      | Science |    92 | 79642256864 |
+|       7 |       107 | Andrew    | Science |    83 | 56742437579 |
+|       8 |       108 | Brayan    | Science |    85 | 75234165470 |
+|       9 |       110 | Alexandar | Bioligy |    67 | 2347346438  |
++---------+-----------+-----------+---------+-------+-------------+
+
+
+https://www.javatpoint.com/mysql-procedure
+
+
+START TRANSACTION;
+
+INSERT INTO student_info
+VALUES (null, 114, 'Kamrul', 'Maths', 85, '6597898751'); 
+
+# ROLLBACK;
+
+COMMIT;
