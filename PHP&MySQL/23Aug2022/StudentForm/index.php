@@ -49,7 +49,7 @@
                 // Code for student Entry
                 if(isset($_POST['submit'])){
                     extract($_POST);
-                    $sql = "INSERT INTO students VALUES('$id', '$name', '$email', '$phone')";    
+                    $sql = "INSERT INTO students VALUES($id, '$name', '$email', '$phone')";    
                     $db->query($sql);    
                     if($db -> affected_rows > 0){
                         // echo "Success";

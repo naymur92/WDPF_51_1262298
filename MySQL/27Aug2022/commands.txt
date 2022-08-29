@@ -17,7 +17,7 @@ delimiter ;
 
 delimiter //
 create trigger after_student_update
-after insert on students
+after update on students
 for each row
 begin
 insert into students_table_log
