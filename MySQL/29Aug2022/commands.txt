@@ -1,0 +1,36 @@
+DELIMITER //
+CREATE FUNCTION calculate_discount (cust_id int(5)) RETURNS DECIMAL(10,2)
+COMMENT 'Calculate employee discount'
+BEGIN
+    DECLARE total DECIMAL(10,2);
+    DECLARE discount DECIMAL(10,2);
+    SELECT SUM(amount) INTO total FROM payments WHERE customerNumber = cust_id;
+    SET discount = total * .05;
+    RETURN discount;
+END;
+//
+DELIMITER ;
+
+*********************
+****CALL FUNCTION****
+*********************
+select calculate_discount(103);
+
+
+
+create table Manufacturer (id tinyint auto_increment primary key, name varchar(50), address varchar(100), contact_no varchar(50));
+
+create table Product (id tinyint auto_increment primary key,
+name varchar(50),
+price int(5),
+manufacturer_id int(10));
+
+
+create view product_info_view as
+select 
+m.name as 'Manufacturer Name',
+p.id as 'Produce ID',
+p.name as 'Product Name',
+p.price as 'Price'
+from Manufacturer m, Product p
+WHERE m.id=p.manufacturer_id and p.price > 5000;
