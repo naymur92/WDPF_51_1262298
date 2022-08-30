@@ -12,7 +12,6 @@
   </head>
   <body>
     <div class="container">
-
         <h1>Manufacturer Form</h1>
         <form action="" method="post">
             <table>
@@ -42,37 +41,16 @@
         </form>
 
         <?php
-        $db->query("DROP PROCEDURE IF EXISTS insert_into_manufacturer;");
         
-        $procedure = <<<HEREDOC
-        DELIMITER //
-        CREATE PROCEDURE insert_into_manufacturer
-        (
-            IN name VARCHAR(50),
-            IN address VARCHAR(100),
-            IN contact VARCHAR(50)
-        )
-        BEGIN
-        INSERT INTO Manufacturer
-        VALUES(null, name, address, contact);
-        END //
-        DELIMITER ;
-        HEREDOC;
-
-        if($db->query($procedure)){
-            echo "<p class='text-primary'>Successfully Created PROCEDURE.</p>";
-        } else{
-            echo "<p class='text-danger'>There is a problem in procedure Creation.</p>";
-        }
-
         if(isset($_POST['submit'])){
             extract($_POST);
-            if($db->query("CALL insert_into_manufacturer($name, $address, $contact)")){
+            if($db->query("CALL insert_into_manufacturer('$name', '$address', '$contact')")){
                 echo "<p class='text-primary'>Value added successfully.</p>";
             }
         }
         
         ?>
+        <a href="manufacturers.php" class="btn btn-primary">Manufacturer List</a>
 
     </div>
 

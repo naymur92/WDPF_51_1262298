@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>EV-1_Q-4</title>
+    <title>Manufacturers</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,31 +12,33 @@
   </head>
   <body>
     <div class="container">
-        <h1>Product Table</h1>
-        
-        <table class="table table-bordered table-striped table-hover">
+        <h1>Manufacturer List</h1>
+        <table class="table table-bordered table-hover">
             <tr>
                 <th>ID</th>
-                <th>Product Name</th>
-                <th>Price (> 5000)</th>
-                <th>Manufacture ID</th>
+                <th>Manufacturer Name</th>
+                <th>Address</th>
+                <th>Contact</th>
             </tr>
             <?php
-            // Outputting Data
-                $sql = "SELECT * FROM show_products";
+                $sql = "SELECT * FROM Manufacturer";
                 $result = $db->query($sql);
-                while($data = $result->fetch_object()){
+                while($row = $result->fetch_assoc()){
             ?>
+
             <tr>
-                <td><?php echo $data->id ?></td>
-                <td><?php echo $data->name ?></td>
-                <td><?php echo $data->price ?></td>
-                <td><?php echo $data->manufacturer_id ?></td>
+                <td><?php echo $row['id'] ?></td>
+                <td><?php echo $row['name'] ?></td>
+                <td><?php echo $row['address'] ?></td>
+                <td><?php echo $row['contact_no'] ?></td>
             </tr>
+
             <?php
                 }
             ?>
         </table>
+        <a href="ev1_q3.php" class="btn btn-primary">Manufacturer Entry</a>
+        <a href="manufacturers_delete.php" class="btn btn-primary">Manufacturer Delete</a>
     </div>
       
     <!-- Optional JavaScript -->

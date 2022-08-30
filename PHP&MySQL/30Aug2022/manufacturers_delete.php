@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>EV-1_Q-4</title>
+    <title>Delete Manufacturer</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,31 +12,31 @@
   </head>
   <body>
     <div class="container">
-        <h1>Product Table</h1>
-        
-        <table class="table table-bordered table-striped table-hover">
-            <tr>
-                <th>ID</th>
-                <th>Product Name</th>
-                <th>Price (> 5000)</th>
-                <th>Manufacture ID</th>
-            </tr>
-            <?php
-            // Outputting Data
-                $sql = "SELECT * FROM show_products";
-                $result = $db->query($sql);
-                while($data = $result->fetch_object()){
-            ?>
-            <tr>
-                <td><?php echo $data->id ?></td>
-                <td><?php echo $data->name ?></td>
-                <td><?php echo $data->price ?></td>
-                <td><?php echo $data->manufacturer_id ?></td>
-            </tr>
-            <?php
+        <h1>Delete Manufacturer</h1>
+        <form action="" method="post">
+            <select name="manu_id" id="">
+                <option value="" disabled>Select One</option>
+                <?php
+                    $sql = "SELECT * FROM Manufacturer";
+                    $result = $db->query($sql);
+                    while($row = $result->fetch_assoc()){
+                ?>
+                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                <?php
+                    }
+                ?>
+            </select>
+            <input type="submit" name="submit" value="DELETE">
+        </form>
+        <?php
+            if(isset($_POST['submit'])){
+                $db->query("DELETE FROM Manufacturer WHERE id={$_POST['manu_id']}");
+                if($db->affected_rows>0){
+                    echo "<h3>Successfully Deleted</h3>";
                 }
-            ?>
-        </table>
+            }
+        ?>
+        
     </div>
       
     <!-- Optional JavaScript -->

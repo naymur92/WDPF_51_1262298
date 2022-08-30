@@ -1,2 +1,48 @@
+CREATE OR REPLACE VIEW show_products AS
+SELECT * FROM Product WHERE price > 5000;
+
+
+DELIMITER //
+CREATE PROCEDURE insert_into_manufacturer
+(
+    IN name VARCHAR(50),
+    IN address VARCHAR(100),
+    IN contact VARCHAR(50)
+)
+BEGIN
+INSERT INTO Manufacturer
+VALUES(null, name, address, contact);
+END //
+DELIMITER ;
+
+
+SELECT productName, productDescription FROM products WHERE MATCH(productDescription) AGAINST ('Moto');
+
+SELECT productName, productDescription FROM products WHERE MATCH(productDescription) AGAINST ('Official');
+
+SELECT productName, productDescription FROM products WHERE productDescription LIKE '%Wheel%';
+
+// Export mysql database
+mysqldump -u root -p wdpf51 > ./Downloads/wdpf51_dump.sql
+
+// Import database
+mysql -u root -p wdpf_test_dump < ./Downloads/wdpf51_dump.sql
+
+
+
+select * into outfile
+"/opt/lampp/htdocs/WDPF_51_1262298/students.txt"
+fields terminated by '\t'
+lines terminated by '\n'
+from students;
+
+
 delimiter //
-create procedure insert_manufacturer
+create trigger delete_products
+after delete on Manufacturer
+for each row
+begin
+delete from product where manufacturer_id=old.id;
+end
+//
+delimiter ;
