@@ -42,7 +42,7 @@ create trigger delete_products
 after delete on Manufacturer
 for each row
 begin
-delete from product where manufacturer_id=old.id;
+delete from Product where manufacturer_id=old.id;
 end
 //
 delimiter ;

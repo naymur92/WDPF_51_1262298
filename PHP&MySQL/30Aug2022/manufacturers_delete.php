@@ -13,6 +13,17 @@
   <body>
     <div class="container">
         <h1>Delete Manufacturer</h1>
+
+        <?php
+        // Delete part
+            if(isset($_POST['submit'])){
+                $db->query("DELETE FROM Manufacturer WHERE id={$_POST['manu_id']}");
+                if($db->affected_rows>0){
+                    $error = "<h3 class='text-danger'>Successfully Deleted</h3>";
+                }
+            }
+        ?>
+
         <form action="" method="post">
             <select name="manu_id" id="">
                 <option value="" disabled>Select One</option>
@@ -26,17 +37,15 @@
                     }
                 ?>
             </select>
-            <input type="submit" name="submit" value="DELETE">
+            <input type="submit" class="btn btn-danger" name="submit" value="DELETE">
         </form>
+        <br>
+        <a href="manufacturers.php" class="btn btn-primary">Manufacturer List</a>
         <?php
-            if(isset($_POST['submit'])){
-                $db->query("DELETE FROM Manufacturer WHERE id={$_POST['manu_id']}");
-                if($db->affected_rows>0){
-                    echo "<h3>Successfully Deleted</h3>";
-                }
+            if(isset($error)){
+                echo $error;
             }
         ?>
-        
     </div>
       
     <!-- Optional JavaScript -->
