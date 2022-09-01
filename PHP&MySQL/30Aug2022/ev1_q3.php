@@ -50,7 +50,8 @@
         }
         
         ?>
-        <a href="manufacturers.php" class="btn btn-primary">Manufacturer List</a>
+        <br><br><br>
+        <a href="manufacturers.php" class="btn btn-link">Manufacturer List</a>
 
     </div>
 
