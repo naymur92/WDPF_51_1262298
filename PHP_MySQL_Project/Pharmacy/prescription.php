@@ -93,12 +93,12 @@ function validateForm() {
         // connect to the database
         include_once('connect_db.php');
        // get results from database
-       $result = mysql_query("SELECT * FROM prescription")or die(mysql_error());
+       $result = mysqli_query($con, "SELECT * FROM prescription")or die(mysqli_error($con, ));
 		// display data in table
         echo "<table border='1' cellpadding='5'align='center'>";
         echo "<tr> <th>Customer</th><th>Prescription N<sup>o</sup></th> <th>Invoice N<sup>o</sup></th><th>Date </th><th>Delete</th></tr>";
         // loop through results of database query, displaying them in the table
-        while($row = mysql_fetch_array( $result )) {
+        while($row = mysqli_fetch_array( $result )) {
                 // echo out the contents of each row into a table
                 echo "<tr>";
                 echo '<td>' . $row['customer_name'] . '</td>';
@@ -195,8 +195,8 @@ function validateForm() {
 		</script>
 		<div id="viewer"><span id="viewer2"></span></div>
 		<?php
-		$invNum= mysql_query ("SELECT 1+MAX(invoice_id) FROM invoice");
-		$invoice=mysql_fetch_array($invNum);
+		$invNum= mysqli_query($con, "SELECT 1+MAX(invoice_id) FROM invoice");
+		$invoice=mysqli_fetch_array($invNum);
 		if($invoice[0]=='')
 		{$invoiceNo=10; }
 		else{$invoiceNo=$invoice[0];}
@@ -218,9 +218,9 @@ function validateForm() {
 				<tr><td align="left"><input name="phone" type="text"placeholder="Phone" id="phone" style="width:170px" required="required" /></td></tr>
 				<tr><td><?php
 				echo"<select  class=\"input-small\" name=\"drug_name\" style=\"width:170px\" id=\"drug_name\">";
-						 $getpayType=mysql_query("SELECT drug_name FROM stock");
+						 $getpayType=mysqli_query($con, "SELECT drug_name FROM stock");
 						 echo"<option>Select Drug</option>";
-		 while($pType=mysql_fetch_array($getpayType))
+		 while($pType=mysqli_fetch_array($getpayType))
 			{
 				echo"<option>".$pType['drug_name']."</option>";
 			}

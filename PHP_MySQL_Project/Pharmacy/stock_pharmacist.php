@@ -18,7 +18,7 @@ $qua=$_POST['quantity'];
 $cost=$_POST['cost'];
 $sta="Available";
 
-$sql=mysql_query("INSERT INTO stock(drug_name,category,description,company,supplier,quantity,cost,status,date_supplied)
+$sql=mysqli_query($con, "INSERT INTO stock(drug_name,category,description,company,supplier,quantity,cost,status,date_supplied)
 VALUES('$sname','$cat','$des','$com','$sup','$qua','$cost','$sta',NOW())");
 if($sql>0) {header("location:http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/stock_pharmacist.php");
 }else{
@@ -79,14 +79,14 @@ $message1="<font color=red>Registration Failed, Try again</font>";
 
         // get results from database
 
-        $result = mysql_query("SELECT * FROM stock")
-                or die(mysql_error());
+        $result = mysqli_query($con, "SELECT * FROM stock")
+                or die(mysqli_error($con));
 		// display data in table
         echo "<table border='1' cellpadding='3'>";
          echo "<tr><th>ID</th><th>Name</th><th>Category</th><th>Description</th><th>Status </th><th>Date </th><th>Delete</th></tr>";
 
         // loop through results of database query, displaying them in the table
-        while($row = mysql_fetch_array( $result )) {
+        while($row = mysqli_fetch_array( $result )) {
 
                 // echo out the contents of each row into a table
                 echo "<tr>";

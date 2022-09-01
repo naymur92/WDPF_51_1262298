@@ -1,6 +1,7 @@
 <?php
 require_once('tcpdf/config/lang/eng.php');
 require_once('tcpdf/tcpdf.php');
+// include_once('tcpdf/tcpdf.php');
 include('connect_db.php');
 session_start();
 $c_id=$_SESSION['custId'];
