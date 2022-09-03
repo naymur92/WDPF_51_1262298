@@ -1,0 +1,12 @@
+DELIMITER //
+CREATE PROCEDURE insertIntoStudent
+(
+    IN name VARCHAR(50),
+    IN address VARCHAR(100),
+    IN mobile VARCHAR(20)
+)
+BEGIN
+    INSERT INTO student
+    VALUES(NULL, name, address, mobile);
+END //
+DELIMITER ;

@@ -108,10 +108,6 @@ session_start();
     .glyphicon-chevron-right:before{
         content:"\f054"
     }
-        
-
-       
-        
         </style>
 
     </head>

@@ -1,0 +1,10 @@
+delimiter //
+create trigger deleteStudent
+after delete on student
+for each row
+begin
+DELETE FROM result WHERE student_id=OLD.id;
+end //
+delimiter ;
+
+

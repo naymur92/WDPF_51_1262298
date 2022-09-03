@@ -1,0 +1,5 @@
+CREATE VIEW showStudents AS
+SELECT st.id, st.name, st.address, rt.module_name, rt.totalmarks
+FROM student st, result rt
+WHERE st.id = rt.student_id
+ORDER BY name;
