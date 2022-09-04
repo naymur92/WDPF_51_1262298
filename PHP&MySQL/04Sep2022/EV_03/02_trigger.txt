@@ -1,0 +1,31 @@
+delimiter //
+create trigger ai_products
+after insert on products
+for each row
+begin
+insert into product_log
+values(null, new.name, new.product_price, 'INSERT', CURRENT_TIME(), new.id);
+end //
+delimiter ;
+
+
+delimiter //
+create trigger au_products
+after update on products
+for each row
+begin
+insert into product_log
+values(null, new.name, new.product_price, 'UPDATE', CURRENT_TIME(), new.id);
+end //
+delimiter ;
+
+
+delimiter //
+create trigger ad_products
+after delete on products
+for each row
+begin
+insert into product_log
+values(null, old.name, old.product_price, 'DELETE', CURRENT_TIME(), old.id);
+end //
+delimiter ;

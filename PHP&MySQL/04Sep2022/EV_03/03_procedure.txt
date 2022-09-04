@@ -1,0 +1,12 @@
+delimiter //
+create procedure insert_into_products
+(
+    in p_name varchar(50),
+    in p_detail varchar(200),
+    in p_price decimal(5,2)
+)
+begin
+insert into products
+values(null, p_name, p_detail, p_price);
+end //
+delimiter ;
