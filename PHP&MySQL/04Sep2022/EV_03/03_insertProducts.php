@@ -45,7 +45,7 @@
                         if(isset($_POST['submit'])){
                             extract($_POST);
 
-                            $result = $db->query("CALL insert_into_products('$p_name', '$p_details', $p_price)");
+                            $db->query("CALL insert_into_products('$p_name', '$p_details', $p_price)");
                             if($db->affected_rows>0){
                                 echo "<h4 class='text-success'>Successfully Submitted</h4>";                                
                             } else{
