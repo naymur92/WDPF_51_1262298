@@ -1,0 +1,11 @@
+DELIMITER //
+CREATE PROCEDURE insert_into_manufacturer(
+    IN name VARCHAR(50),
+    IN address VARCHAR(100),
+    IN contact VARCHAR(50)
+)
+BEGIN
+    INSERT INTO Manufacturer
+    VALUES(NULL, name, address, contact);
+END //
+DELIMITER ;

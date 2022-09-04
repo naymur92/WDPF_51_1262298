@@ -1,0 +1,2 @@
+CREATE VIEW viewProducts AS
+SELECT * FROM Product WHERE price > 5000;
