@@ -170,10 +170,5 @@ if (mysqli_num_rows($result) == 1) { // Valid user ID, display the form.
 	$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 	// Create the form: 	#7
 	
-	}
-}
-//catch exception
-catch(Exception $e) {
-	// echo 'Message: ' .$e->getMessage();
-  }	
+// This file is a part of edit_your_account.php file
 ?>
