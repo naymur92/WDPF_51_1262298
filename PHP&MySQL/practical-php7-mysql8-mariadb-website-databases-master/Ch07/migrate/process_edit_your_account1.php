@@ -170,4 +170,10 @@ if (mysqli_num_rows($result) == 1) { // Valid user ID, display the form.
 	// Get the user's information:
 	$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 	// Create the form: 	#7
+}
+}
+//catch exception
+catch(Exception $e) {
+	// echo 'Message: ' .$e->getMessage();
+  }
 ?>

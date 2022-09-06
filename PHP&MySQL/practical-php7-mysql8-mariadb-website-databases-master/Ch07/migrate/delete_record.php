@@ -18,7 +18,7 @@ define(ERROR_LOG,"errors.log");
 <style type="text/css">
 p { text-align:center; }
 form { text-align:center;}
-}
+
 input.fl-left { float:left; 
 }
 #submit-yes { float:left; margin-left:220px;
