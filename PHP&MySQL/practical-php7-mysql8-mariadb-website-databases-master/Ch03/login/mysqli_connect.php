@@ -1,8 +1,10 @@
 <?php
 // Create a connection to the logindb database. 
 // Set the encoding and the access details as constants:
-DEFINE ('DB_USER', 'william');
-DEFINE ('DB_PASSWORD', 'Cat0nlap');
+// DEFINE ('DB_USER', 'william');
+DEFINE ('DB_USER', 'root');
+// DEFINE ('DB_PASSWORD', 'Cat0nlap');
+DEFINE ('DB_PASSWORD', '');
 DEFINE ('DB_HOST', 'localhost');
 DEFINE ('DB_NAME', 'logindb');
 // Make the connection:
