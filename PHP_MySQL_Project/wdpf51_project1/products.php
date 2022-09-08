@@ -43,10 +43,13 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-5">
             <h1>All Products</h1>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-2">
+            <a href="product_entry.php" class="btn btn-danger"><i class="fa fa-plus"></i> New Product</a>
+          </div>
+          <div class="col-sm-5">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">All Products</li>
@@ -108,9 +111,9 @@
 				                <span class="sr-only">Toggle Dropdown</span>
 				            </button>
                             <div class="dropdown-menu" role="menu">
-                                <a class="dropdown-item edit_data" href="editProduct.php?pid=<?php echo $row['pid'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+                                <a class="dropdown-item edit_data" href="product_entry.php?pid=<?php echo $row['pid'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item delete_data" href="javascript:void(0)"><span class="fa fa-trash text-danger"></span> Delete</a>
+                                <a class="dropdown-item delete_data" href="product_delete.php?pid=<?php echo $row['pid'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
                             </div>
                         </td>
                     </tr>
