@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -48,8 +50,8 @@
           </div>
           <div class="col-sm-5">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Product Entry</li>
+              <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+              <li class="breadcrumb-item active"><?= isset($_GET['pid']) ? "Product Update" : "Product Entry"; ?></li>
             </ol>
           </div>
         </div>
@@ -96,7 +98,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputDetails">Product Details</label>
-                    <textarea name="pdetails" id="inputDetails" class="form-control" placeholder="Enter product details" rows="5"><?= isset($row['pdetails'])? $row['pdetails']: ''; ?></textarea>
+                    <textarea name="pdetails" id="inputDetails" class="form-control textarea" placeholder="Enter product details"><?= isset($row['pdetails'])? $row['pdetails']: ''; ?></textarea>
                   </div>
                   <div class="form-group">
                     <label for="inputPrice">Product Price</label>
@@ -117,7 +119,7 @@
                       </div>
                     </div>
                     <!-- Selected photo will show here -->
-                    <img src="dist/img/pthumbs/<?= isset($row['pthumb'])? $row['pthumb'] : '' ?>" alt="selected image will show here" height="200px" id="showSelectedPhoto">
+                    <img src="<?= isset($row['pthumb'])? "dist/img/pthumbs/".$row['pthumb'] : '' ?>" alt="selected image will show here" height="200px" id="showSelectedPhoto">
                   </fieldset>
                   <div class="form-group">
                     <label for="inputManuID">Manufacturer ID</label>
@@ -188,7 +190,7 @@
                     $sql = "INSERT INTO products VALUES(NULL, '$pname', '$pdetails', '$pprice', '$newFileName', $manu_id)";
                     $dbcon->query($sql);
                     if($dbcon->affected_rows>0){
-                      echo "<p class='text-success'>Success</p>";
+                      echo "<h4 class='text-success p-4 bg-primary'>Success</h4>";
                     }
                   }                  
                   
@@ -225,9 +227,17 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<script>
+  $(function () {
+    // Summernote
+    $('.textarea').summernote()
+  })
+</script>
 
 
-// script for show selected photo
+<!-- script for show selected photo -->
 <script type="text/javascript">
     function readURL(input) {
         if (input.files && input.files[0]) {
