@@ -13,14 +13,14 @@
 
     try {
         //Server settings
-        $mail->SMTPDebug  = 2;                  //Enable verbose debug output
+        // $mail->SMTPDebug  = 2;                  //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.mail.yahoo.com';                   //Set the SMTP server to send through
                             //smtp.mail.yahoo.com
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'naymur92@yahoo.com';                   //SMTP username
                             //naymur92@yahoo.com
-        $mail->Password   = '';                     //SMTP password
+        $mail->Password   = 'omiinkbfagloqgcs';                     //SMTP password
                             // omiinkbfagloqgcs
         $mail->SMTPSecure = 'tls';              //Enable implicit TLS encryption
         $mail->Port       = 587;                //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
@@ -31,12 +31,14 @@
 
         //Content
         $mail->isHTML(true);                    //Set email format to HTML
-        $mail->Subject = "{$_POST['subject']}";
-        $mail->Body    = "{$_POST['message']}";
+        $mail->Subject = "Password Verification";
+        $mail->Body    = "{$link}";
 
         $mail->send();
-        echo 'Message has been sent';
+        echo "<script>alert('Successfully Registered\n Check your email to verify account');</script>";
+        // echo 'Message has been sent';
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // echo "Message could not be sent.";
     }
 ?>
