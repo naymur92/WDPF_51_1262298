@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <title>the title</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+      // $("p").find("span").addClass("selected");
+      // $("h1").find("span").addClass("selected");
+      $("body").find("span").addClass("selected");
+    });
+  </script>
+  <style>
+    .selected {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Heading <span>Inside h1</span></h1>
+  <p>This is 1st paragraph and <span>THIS IS RED</span></p>
+  <p>This is 2nd paragraph and <span>THIS IS ALSO RED</span></p>
+</body>
+
+</html>
