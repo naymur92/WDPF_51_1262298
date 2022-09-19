@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>append_prepend</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn btn-primary b1">Append (After)</button>
+      <button class="btn btn-secondary b2">Prepend (Before)</button>
+      <ul class="country">
+        <li>Main Item</li>
+      </ul>
+    </div>
+    <div class="container my-4">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <h2>Registration Form</h2>
+          <button class="btn btn-outline-warning pull-right add-field"><i class="fa fa-plus"></i> Add New Field</button>
+          <form action="">
+            <table id="field">
+              <tr>
+                <td><input type="text" class="form-control" name="name" placeholder="Enter name"></td>
+                <td></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+        $(".b1").click(function(){
+          $(".country").append("<li>Append Item</li>");
+        });
+        $(".b2").click(function(){
+          $(".country").prepend("<li>Prepend Item</li>");
+          // $("li").click(function(){
+          //   $(this).remove();
+          // });
+        });
+        $(".add-field").click(function(){
+          var val = "";
+          // var val = prompt("Enter Name", "");
+          $("#field").append("<tr class='item'><td><input type='text' class='form-control' name='name' placeholder='Enter name' value='"+ val +"'></td><td><i class='fa fa-minus text-danger remove'></i></td></tr>")
+          // $(".remove").click(function(){
+          //   $("tr").last().remove();
+          // });
+        });
+      });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
