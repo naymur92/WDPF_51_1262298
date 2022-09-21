@@ -1,55 +1,51 @@
 <html>
+  <head>
+    <title>Keyboard Shortcuts</title>
+    <style type="text/css">
+      div {
+        border: 1px solid black;
+        float: left;
+        height: 200px;
+        margin: 10px;
+        width: 220px;
+      }
+    </style>
+  </head>
 
-<head>
-  <title>Keyboard Shortcuts</title>
-  <style type="text/css">
-    div {
-      border: 1px solid black;
-      float: left;
-      height: 200px;
-      margin: 10px;
-      width: 220px;
-    }
-  </style>
-</head>
+  <body>
+    <div>You can toggle this div using Alt+S</div>
+    <div>You can toggle this div using Alt+G</div>
+    <p style="clear: both">&nbsp;</p>
+    <p>Press Alt+B to toggle both divs</p>
 
-<body>
-  <div>You can toggle this div using Alt+S</div>
-  <div>You can toggle this div using Alt+G </div>
-  <p style="clear:both;">&nbsp;</p>
-  <p>Press Alt+B to toggle both divs</p>
-
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      //remember that this is a global variable
-      var altPressed = false;
-      $(document).keydown(function (event) {
-        if (event.which == 18)
-          altPressed = true;
-        if (altPressed) {
-          switch (event.which) {
-            case 83:
-              $('div:first').slideToggle('slow');
-              return false;
-              break;
-            case 71:
-              $('div:last').slideToggle('slow');
-              return false;
-              break;
-            case 66:
-              $('div').slideToggle('slow');
-              return false;
-              break;
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        //remember that this is a global variable
+        var altPressed = false;
+        $(document).keydown(function (event) {
+          if (event.which == 18) altPressed = true;
+          if (altPressed) {
+            switch (event.which) {
+              case 83:
+                $("div:first").slideToggle("slow");
+                return false;
+                break;
+              case 71:
+                $("div:last").slideToggle("slow");
+                return false;
+                break;
+              case 66:
+                $("div").slideToggle("slow");
+                return false;
+                break;
+            }
           }
-        }
+        });
+        $(document).keyup(function (event) {
+          if (event.which == 18) altPressed = false;
+        });
       });
-      $(document).keyup(function (event) {
-        if (event.which == 18)
-          altPressed = false;
-      });
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
