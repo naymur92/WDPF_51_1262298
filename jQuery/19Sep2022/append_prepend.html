@@ -10,7 +10,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-      
+      .remove{
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: antiquewhite;
+      }
     </style>
   </head>
   <body>
@@ -48,18 +53,14 @@
         });
         $(".b2").click(function(){
           $(".country").prepend("<li>Prepend Item</li>");
-          // $("li").click(function(){
-          //   $(this).remove();
-          // });
         });
         var count = 1;
         $(".add-field").click(function(){
           var val = "";
-          // var val = prompt("Enter Name", "");
           $("#field").append("<tr class='item'><td><label><b>Field " + count + "</b></label><input type='text' class='form-control' name='name' placeholder='Enter name' value='"+ val +"'></td><td><i class='fa fa-minus text-danger remove'></i></td></tr>")
           count++;
           $(".remove").click(function(){
-            $(this).parent().parent().remove();
+            $(this).parents('tr').remove();
           });
         });
       });

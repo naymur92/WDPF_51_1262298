@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>Detecting AJAX Requests</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+  <form>
+    <p>
+      <input type="button" value="Load Some data" />
+    </p>
+  </form>
+</body>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('input:button').click(function () {
+      $.get('check.php', function (data) {
+          $('input:button').after(data);
+        });
+    });
+  });
+</script>
+
+</html>
