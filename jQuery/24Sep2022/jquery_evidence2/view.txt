@@ -1,0 +1,11 @@
+CREATE VIEW view_result AS
+SELECT
+st.student_id,
+st.student_name,
+r.exam_name,
+r.mcq,
+r.evidence,
+(r.mcq + r.evidence) AS total
+FROM
+students st, results r
+WHERE st.student_id = r.std_id;
