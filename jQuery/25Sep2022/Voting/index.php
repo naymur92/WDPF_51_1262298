@@ -14,7 +14,7 @@ if (isset($_POST['vote'])) {
       if ($value == $_POST['browser']) {
         $votes = $unit->getAttribute('votes');
         $unit->setAttribute('votes', ++$votes);
-        setcookie("voted", true, time() + 10); /* expire in 24 hours */
+        setcookie("voted", true, time() + 10); /* expire in 10 sec */
         break;
       }
     }
@@ -49,10 +49,7 @@ if (isset($_POST['vote'])) {
         $xpath = new DomXPath($dom);
         $browsers = $xpath->query('//browser');
         foreach ($browsers as $browser) {
-          if(isset($_POST['browser']))
-            $checked = $_POST['browser'] == $browser->getAttribute('value') ? 'checked' : '';
-          else $checked = "";
-          
+          $checked = isset($_POST['browser']) && $_POST['browser'] == $browser->getAttribute('value') ? 'checked' : '';          
           echo '<li><input type="radio" ' . $checked . ' name="browser" value="' . $browser->getAttribute('value') . '">' . $browser->getAttribute('name') . '</li>';
         }
         ?>

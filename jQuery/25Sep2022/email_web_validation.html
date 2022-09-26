@@ -54,6 +54,7 @@
         $('.mail').each(function () {
           var cur = $(this);
           cur.next('span').remove();
+          // var emailPattern = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
           var emailPattern = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
           if (!emailPattern.test(cur.val())) {
             cur.after('<span class="error"> Invalid Email Id</span>');
@@ -64,7 +65,8 @@
         $('.site').each(function () {
           var cur = $(this);
           cur.next('span').remove();
-          var urlPattern = /^(http(s?))\:\/\/www.([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
+          // var urlPattern = /^(http(s?))\:\/\/www.([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
+          var urlPattern = /^(http(s?))\:\/\/www.([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
           if (!urlPattern.test(cur.val())) {
             cur.after('<span class="error"> Invalid URL</span>');
             dataValid = false;

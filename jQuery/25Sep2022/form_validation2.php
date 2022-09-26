@@ -6,7 +6,7 @@
   <style type="text/css">
     body {
       font-family: "Trebuchet MS", verdana;
-      width: 450px;
+      width: 500px;
     }
 
     .error {
@@ -76,7 +76,7 @@
         $('#info').html('');
         $('.required').each(function() {
           var cur = $(this);
-          cur.next('span').remove();
+          cur.next().remove();
           if ($.trim(cur.val()) == '') {
             cur.after('<span class="error"> Mandatory field</span>');
             dataValid = false;
@@ -85,7 +85,7 @@
         // if (!dataValid) return false;
         $('.number').each(function() {
           var cur = $(this);
-          cur.next().remove();
+          // cur.next().remove();
           if (isNaN(cur.val())) {
             cur.after('<span class="error"> Must be a number</span>');
             dataValid = false;
