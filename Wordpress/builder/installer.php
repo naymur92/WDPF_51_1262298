@@ -56,11 +56,11 @@ namespace {
     LogHandler::init_error_handler();
     class DUPX_Bootstrap
     {
-        const ARCHIVE_FILENAME   = '20220927_honeylink_490680bcbf76bf533039_20220927123431_archive.zip';
-        const ARCHIVE_SIZE       = '36368393';
+        const ARCHIVE_FILENAME   = '20220928_honeylink_a506fa86ec1daf458539_20220928033625_archive.zip';
+        const ARCHIVE_SIZE       = '17082950';
         const INSTALLER_DIR_NAME = 'dup-installer';
-        const PACKAGE_HASH       = '490680b-27123431';
-        const SECONDARY_PACKAGE_HASH = '0ed05f8-27123431';
+        const PACKAGE_HASH       = 'a506fa8-28033625';
+        const SECONDARY_PACKAGE_HASH = 'c9c0e1c-28033625';
         const VERSION            = '1.5.0';
         const MINIMUM_PHP_VERSION = '5.3.8';
         const ZIP_MODE_AUTO    = 0;
