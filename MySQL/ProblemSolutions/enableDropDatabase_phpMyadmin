@@ -1,0 +1,4 @@
+Go to folder /opt/lampp/phpmyadmin
+sudo gedit config.inc.php
+ADD line
+$cfg['AllowUserDropDatabase']='TRUE';
