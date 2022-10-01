@@ -12,10 +12,16 @@
   </head>
   <body>
       <script>
-        var input = require("fs").readFileSync('stdin', 'utf8');
-        var lines = input.split('\n');
+        var input = prompt("Enter two numbers", "");
+        var lines = input.split(',');
 
-        console.log(lines);
+        var A = parseFloat(lines.shift());
+        var B = parseFloat(lines.shift());
+        var total = A * 3.5 + B * 7.5;
+        var avg = total/(3.5+7.5);
+        var output = 'MEDIA = ' + avg.toFixed(5);
+
+        console.log(output);
       </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
