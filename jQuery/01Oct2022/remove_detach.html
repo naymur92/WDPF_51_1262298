@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Test</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      .bg{
+        background-color: yellow;
+      }
+      .paragraph{
+        width: 300px;
+        height: 300px;
+        border: 2px solid #ddd;
+      }
+      .output{
+        width: 300px;
+        height: 300px;
+        border: 2px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn btn-primary remove">Remove</button>
+    <button class="btn btn-secondary detach">Detach</button>
+    <div class="paragraph">
+      <p class="p1">This remove() element</p>
+      <p class="p2">This detach() element</p>
+    </div>
+
+    <div class="output"></div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("p").click(function(){
+          $(this).toggleClass('bg');
+        })
+        $(".remove").click(function(){
+          $(".output").append($(".p1").remove());
+        })
+        $(".detach").click(function(){
+          $(".output").append($(".p2").detach());
+        })
+      });
+    </script>
+  </body>
+</html>
