@@ -28,11 +28,14 @@
       $(document).ready(function(){
         var ih = $("div").innerHeight();
         var iw = $("div").innerWidth();
+        var width = $("div").width();
+        var height = $("div").height();
         var ow = $("div").outerHeight();
         var oh = $("div").outerWidth();
         // alert("innerHeight: " + ih + " & innerWidth: " + iw);
         var output = "innerHeight: " + ih + "<br>innerWidth: " + iw;
         output += "<br>outerHeight: " + oh + "<br>outerWidth: " + ow;
+        output += "<br>Width: " + width + "<br>Height: " + height;
         $(".box").html(output);
       });
     </script>
