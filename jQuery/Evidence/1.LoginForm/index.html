@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login Validation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <script src="../../jquery-3.6.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-5">
+          <div class="jumbotron">
+            <h1>Login Form</h1>
+          </div>
+          <form action="">
+            <table>
+              <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="email" name="email" id="email"></td>
+              </tr>
+              <tr>
+                <td><label for="pass">Password</label></td>
+                <td><input type="password" name="pass" id="pass"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><input type="button" id="login" value="LOGIN"></td>
+              </tr>
+            </table>
+          </form>
+          <div class="output"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // $("#login").click(function(){
+        //   var email = $("#email").val();
+        //   var pass = $("#pass").val();
+        //   $.post(
+        //     'login.php',
+        //     {email:email, pass:pass},
+        //     function(data){
+        //       $(".output").html(data);
+        //     }
+        //   );
+        // });
+
+        // Using serialize() method
+        $("#login").click(function(){
+          var data = $("form").serialize();
+          // $.post(
+          //   'login.php',
+          //   data,
+          //   function(out){
+          //     $(".output").html(out);
+          //   }
+          // );
+
+          $.ajax({
+            url: 'login.php',
+            method: 'POST',
+            data,
+            success: function(out){
+              $(".output").html(out);
+            }
+          });
+        });
+      });
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
