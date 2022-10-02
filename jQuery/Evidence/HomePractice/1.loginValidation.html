@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Login Validation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="../../jquery-3.6.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      .content{
+        border: 1px solid #007bff;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      input{
+        outline: 1px solid #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6 content">
+          <div class="jumbotron bg-primary">
+            <h1 class="text-center text-white">Login Form</h1>
+          </div>
+          <div class="row justify-content-center">
+            <form action="">
+              <label for="email"><strong>Email:</strong></label>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email"><br>
+              <label for="password"><strong>Password:</strong></label>
+              <input type="password" name="pass" id="pass" class="form-control" placeholder="Enter Password"><br>
+              <input type="button" name="submit" id="submit" value="LOGIN" class="btn btn-primary">
+            </form>
+          </div>
+          <h4 class="output text-center p-4"></h4>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <script>
+      $(document).ready(function(){
+        $("#submit").click(function(){
+          var data = $("form:first").serialize();
+          $.post(
+            '1.process.php',
+            data,
+            function(result){
+              $(".output").html(result);
+            }
+          );
+        });
+      });
+    </script>
+    <!-- first Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
