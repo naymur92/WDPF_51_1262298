@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Email & Web Validation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="../../jquery-3.6.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      input, textarea{
+        outline: 1px solid #007bff;
+      }
+      table{
+        width: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="card p-4">
+            <div class="card-header">
+              <h1 class="text-center">Email & Web Validation</h1>
+            </div>
+            <div class="card-body">
+              <form action="">
+                <table>
+                  <tr>
+                    <th><label for="email">Email</label></th>
+                    <td><input type="text" id="email" placeholder="Enter Email" class="form-control" required></td>
+                  </tr>
+                  <tr>
+                    <th><label for="web">Web Address</label></th>
+                    <td><input type="text" id="web" placeholder="Enter Web Address" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="button" value="Validate" id="validate" class="btn"></td>
+                  </tr>
+                </table>
+              </form>
+              <h4 id="output" class="text-success"></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <script>
+      $(document).ready(function(){
+        $("#validate").click(function(){
+          var dataValid = true;
+
+          $("#output").html('');
+
+          $("#email").each(function(){
+            var cur = $(this);
+            cur.next('span').remove();
+
+            // /^()()()$/;
+            // /^([a-zA-Z0-9.\-_]+)()()$/;
+            // /^([a-zA-Z0-9.\-_]+)@([a-z0-9.\-]+)()$/;
+            // /^([a-zA-Z0-9.\-_]+)@([a-z0-9.\-]+)\.([a-z]{2,6})$/;
+
+            var emailPattern = /^([A-Za-z0-9.\-_]+)@([a-z0-9.\-]+)\.([a-z]{2,6})$/;
+            if(!emailPattern.test($.trim(cur.val()))){
+              cur.after('<span class="text-danger">Must be a valid email.</span>');
+              dataValid = false;
+            }
+          });
+
+          $("#web").each(function(){
+            var cur = $(this);
+            cur.next('span').remove();
+
+            // /^().()[]{}()?()?$/
+            // /^(http)://www.()[]{}()?()?$/
+            // /^(http)://www.()[]{}()?()?$/
+            // /^(http(s?))\:\/\/www.()[]{}()?()?$/
+            // /^(http(s?))\:\/\/www.([A-Za-z0-9.\-])[]{}()?()?$/
+            // /^(http(s?))\:\/\/www.([A-Za-z0-9.\-]+\.)+[]{}()?()?$/
+            // /^(http(s?))\:\/\/www.([A-Za-z0-9.\-]+\.)+[a-zA-Z]{2,6}()?()?$/
+            // /^(http(s?))\:\/\/www.([A-Za-z0-9.\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?()?$/
+            // /^(http(s?))\:\/\/www.([A-Za-z0-9.\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/
+            
+            var webPattern = /^(http(s?))\:\/\/www.([a-zA-Z0-9.\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
+            if(!webPattern.test($.trim(cur.val()))){
+              cur.after('<span class="text-danger">Must be a valid URL.</span>');
+              dataValid = false;
+            }
+          });
+          
+          if(dataValid) $("#output").html("Successfully Validated");
+        });        
+      });
+    </script>
+    <!-- first Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

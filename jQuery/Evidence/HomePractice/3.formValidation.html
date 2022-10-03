@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Form Validation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="../../jquery-3.6.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      input, textarea{
+        outline: 1px solid #007bff;
+      }
+      table{
+        width: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="card p-4">
+            <div class="card-header">
+              <h1 class="text-center">Form Validation</h1>
+            </div>
+            <div class="card-body">
+              <form action="">
+                <table>
+                  <tr>
+                    <th><label for="name">Name *</label></th>
+                    <td><input type="text" id="name" placeholder="Enter Name" class="form-control required"></td>
+                  </tr>
+                  <tr>
+                    <th><label for="country">Country *</label></th>
+                    <td><input type="text" id="country" placeholder="Enter Country" class="form-control required"></td>
+                  </tr>
+                  <tr>
+                    <th><label for="city">City</label></th>
+                    <td><input type="text" id="city" placeholder="Enter City" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th><label for="postal">Post Code *</label></th>
+                    <td><input type="text" id="postal" placeholder="Enter Post Code" class="form-control required number"></td>
+                  </tr>
+                  <tr>
+                    <th><label for="address">Address *</label></th>
+                    <td>
+                      <textarea id="address" rows="10" class="form-control required"></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><label for="phone">Phone *</label></th>
+                    <td><input type="text" id="phone" placeholder="Enter Phone" class="form-control required number"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="button" value="Validate" id="validate" class="btn"></td>
+                  </tr>
+                </table>
+              </form>
+              <h4 id="output" class="text-success"></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <script>
+      $(document).ready(function(){
+        $("#validate").click(function(){
+          var dataValid = true;
+          $("#output").html('');
+
+          $(".required").each(function(){
+            var cur = $(this);
+            cur.next('span').remove();
+            if($.trim(cur.val()) == ''){
+              cur.after("<span class='text-danger'>Required Field!</span>");
+              dataValid = false;
+            }
+          });
+          $(".number").each(function(){
+            var cur = $(this);
+            if(isNaN($.trim(cur.val()))){
+              cur.after("<span class='text-danger'>Must be a number!</span>");
+              dataValid = false;
+            }
+          });
+
+          if(dataValid) $("#output").html("Successfully Validated");
+        });        
+      });
+    </script>
+    <!-- first Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
