@@ -1,17 +1,25 @@
-<div id="logo">
-    <h1><a href="<?=home_url(); ?>">Honey Link</a></h1>
-    <h2 id="tagline">Committed to quality</h2>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo('charset'); ?>">
+<title><?php bloginfo('name'); ?></title>
+
+<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<div id="container">
+  <div id="logo">
+    <h1><a href="<?=home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+    <h2 id="tagline"><?php bloginfo('description'); ?></h2>
   </div>
   <div id="menu"> <a href="#" id="login">login</a> <a href="#" id="rss-entries">rss entries</a> <a href="#" id="rss-comments">rss comments</a> </div>
   <div class="clearing">&nbsp;</div>
-  <ul id="nav">
-    <li><a href="<?=home_url(); ?>">&nbsp;&nbsp;Home&nbsp;</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Portfolio</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Henry</a></li>
-  </ul>
+  <?php
+  wp_nav_menu(array(
+    'menu_id'			=> "nav",
+    'theme_location'	=> "main"
+  ) );
+  ?>
   <div id="search">
     <form method="get" id="searchform" action="#">
       <div id="s-text">

@@ -1,4 +1,5 @@
-<div id="sidebar">
+<?php dynamic_sidebar('sidebar-1'); ?>
+<!-- <div id="sidebar">
     <ul>
       <li>
         <h2>Pages</h2>
@@ -42,4 +43,4 @@
         </ul>
       </li>
     </ul>
-  </div>
+  </div> -->

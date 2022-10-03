@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Login Form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="../../jquery-3.6.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      .content{
+        border: 1px solid #007bff;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      input{
+        outline: 1px solid #007bff;
+      }
+      #result{
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6 content">
+          <div class="jumbotron bg-primary">
+            <h1 class="text-center text-white">Login Form</h1>
+          </div>
+          <div class="row justify-content-center">
+            <form>
+              <label for="email"><strong>Email:</strong></label><br>
+              <input type="text" id="email" placeholder="Enter Email" class="form-control"><br>
+              <label for="pass"><strong>Password:</strong></label><br>
+              <input type="password" id="pass" placeholder="Enter Password" class="form-control"><br>
+              <input type="button" id="login" value="LOGIN" class="btn btn-primary">
+            </form>
+          </div>
+          <h4 id="result" class="text-center"></h4>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <script>
+      $(document).ready(function(){
+       $("#login").click(function(){
+        var dataValid = true;
+
+        $("#result").html('');
+        $("#email").next('span').remove();
+        $("#pass").next('span').remove();
+        
+        // receive data
+        var email = $("#email").val();
+        var pass = $("#pass").val();
+
+        // Email Validation & empty check
+        if($.trim(email)==''){
+          $("#email").after("<span class='text-danger'>Please Enter Email</span>");
+          dataValid = false;
+        } else{
+          var emailPattern = /^([a-z0-9.\-_]+)@([a-z0-9.]+).([a-z]{2,6})$/;
+          if(!emailPattern.test($.trim(email))){
+            $("#email").after("<span class='text-danger'>Invalid Email Format</span>");
+            dataValid = false;
+          }
+        }
+
+        // Password empty check
+        if($.trim(pass)==''){
+          $("#pass").after("<span class='text-danger'>Please Enter Password</span>");
+          dataValid = false;
+        }
+
+        // data checking
+        if(dataValid){
+          $.post(
+            '1.process.php',
+            {
+              email:email,
+              pass:pass
+            },
+            function(data){
+              $("#result").html(data);
+            }
+          );
+        }
+        
+       });
+      });
+    </script>
+    <!-- first Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
