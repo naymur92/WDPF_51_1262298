@@ -1,13 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="<?= get_stylesheet_uri() ?>" type="text/css" media="screen" />
-</head>
-<body>
-<div id="container">
-  <?php get_header() ?>
+<?php get_header() ?>
   <div id="posts">
     <?php
       if(have_posts()):
@@ -34,5 +25,3 @@
 <?php get_sidebar() ?>
 </div>
 <?php get_footer() ?>
-</body>
-</html>
