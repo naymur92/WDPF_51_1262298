@@ -74,7 +74,7 @@ nav .wrap-nav{height: 80px; background: #ED145B;}
 #content .wrap-content{background: #141414;}
 
 .block01 {padding: 10px;}
-.block01 .box{background: #ED145B; padding: 20px 10px;}
+.block01 .box{background: #ED145B; padding: 20px 10px; height: 130px !important;}
 .block01 h2{font-size:23px; line-height:30px; font-weight:normal;}
 .block01 p{font-size:16px;}
 .block01 .more{text-align: right;}
