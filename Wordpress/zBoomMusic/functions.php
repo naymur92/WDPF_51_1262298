@@ -45,7 +45,7 @@ add_filter( 'use_widgets_block_editor', '__return_false' );
 function slider_post_type() {
     $args = array(
         'public'    => true,
-        'label'     => __( 'Sliders', 'textdomain' ),
+        'label'     => __( 'Sliders', 'zboommusic' ),
         'supports'  => array( 'title', 'thumbnail' ),
     );
     register_post_type( 'slider', $args );
@@ -56,7 +56,7 @@ add_action( 'init', 'slider_post_type' );
 function service_post_type() {
     $args = array(
         'public'    => true,
-        'label'     => __( 'Services', 'textdomain' ),
+        'label'     => __( 'Services', 'zboommusic' ),
         'supports'  => array( 'title', 'editor' ),
     );
     register_post_type( 'service', $args );
