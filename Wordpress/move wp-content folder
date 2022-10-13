@@ -1,0 +1,6 @@
+	// Set current location
+define('WP_CONTENT_DIR',
+	$_SERVER['DOCUMENT_ROOT'].'/wordpress/wp-content');
+
+define('WP_CONTENT_URL',
+ 'http://localhost/wordpress/wp-content'); 
