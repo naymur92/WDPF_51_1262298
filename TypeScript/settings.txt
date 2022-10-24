@@ -1,3 +1,7 @@
+>> Install typescript
+npm install -g typescript
+
+>> Setting
 tsc --init
 
 >> if problem then
