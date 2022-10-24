@@ -1,0 +1,7 @@
+tsc --init
+
+>> if problem then
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+>> automation (watch flag)
+tsc -w
