@@ -1,10 +1,10 @@
-"use strict";
-// Object
-let person = {
-    name: 'Naymur',
-    age: 30,
-    isCaptain: true
-};
-person.name = 34; // Shows error in code
-person.name = 'Kamrul';
-person.country = 'Bangladesh'; // this also shows error
+function myFunction(param) {
+ if (typeof(param) == "number") {
+ let result = param + 100;
+ console.log("My result: " + result);
+ } else {
+ throw ("Expected a number: " + param)
+ }
+}
+myFunction(1);
+myFunction("London");
