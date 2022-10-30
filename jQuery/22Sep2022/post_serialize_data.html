@@ -68,6 +68,7 @@
     $(document).ready(function(){
       $("input:button").click(function(){
         var output = $("form:first").serialize();
+        // alert(output);
         $.post(
           'process.php',
           output,
