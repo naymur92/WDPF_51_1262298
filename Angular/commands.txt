@@ -27,3 +27,9 @@ sudo ng new project_name
 sudo ng serve
 <!-- Change Port and start server -->
 ng serve --port 3000 --open
+
+
+npm install
+npm update
+
+px -p @angular/cli@8 ng new sample-application
