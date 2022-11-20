@@ -1,0 +1,7 @@
+npm init
+
+desc: "Test"
+test_cmd: test
+
+npm uninstall pac_name
+npm install pac_name --save
