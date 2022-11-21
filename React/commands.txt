@@ -5,3 +5,8 @@ test_cmd: test
 
 npm uninstall pac_name
 npm install pac_name --save
+
+// Delete react from global
+npm uninstall -g create-react-app
+
+npx create-react-app app_name
