@@ -15,3 +15,9 @@ npx create-react-app app_name
 
 // Start the application
 npm start
+
+// Package
+npm i generate-react-cli
+
+// Create component
+npx generate-react-cli component MyComponent
