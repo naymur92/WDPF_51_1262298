@@ -15,15 +15,3 @@ npx create-react-app app_name
 
 // Start the application
 npm start
-
-
-// Environment Settings
-**Follow steps from here
-https://github.com/learnwithsumit/think-in-a-react-way/tree/lesson-3
-
-npm i --dev prettier
-npm i --dev babel-eslint
-npx install-peerdeps --dev eslint-config-airbnb
-npm i --dev eslint-config-prettier eslint-plugin-prettier
-
-npm install --save-dev @babel/preset-react
