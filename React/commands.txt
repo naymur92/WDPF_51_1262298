@@ -28,9 +28,9 @@ npx generate-react-cli component MyComponent
 **Follow steps from here
 https://github.com/learnwithsumit/think-in-a-react-way/tree/lesson-3
 
-npm i --dev prettier
-npm i --dev babel-eslint
-npx install-peerdeps --dev eslint-config-airbnb
-npm i --dev eslint-config-prettier eslint-plugin-prettier
+npm i --include=dev prettier
+npm i --include=dev babel-eslint
+npx install-peerdeps --include=dev eslint-config-airbnb
+npm i --include=dev eslint-config-prettier eslint-plugin-prettier
 
 npm install --save-dev @babel/preset-react
