@@ -33,4 +33,3 @@ npm i --include=dev babel-eslint
 npx install-peerdeps --include=dev eslint-config-airbnb
 npm i --include=dev eslint-config-prettier eslint-plugin-prettier
 
-npm install --save-dev @babel/preset-react
