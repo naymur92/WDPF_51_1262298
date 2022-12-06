@@ -1,0 +1,41 @@
+// Common Extensions
+Auto Rename Tag,
+Material Icon Theme,
+Prettier - Code formatter
+
+
+// HTML, CSS
+HTML Snippets,
+HTML CSS Support,
+IntelliSense for CSS class name,
+Color Highlight,
+Live Server
+
+
+// JavaScript, TypeScript
+ESLint,
+JavaScript (ES6) code snippets,
+JavaScript and TypeScript Nightly,
+Babel JavaScript
+
+
+// Bootstrap
+Bootstrap 4, Font awesome 4, Font awesome 5
+
+
+// PHP
+PHP Debug,
+PHP IntelliSense,
+PHP Intelephense,
+PHP Extension Pack
+
+
+// Angular
+Angular Language Service,
+Angular Snippets (Version 13)
+
+
+// React
+ES7 + React/Redux/React-Native ..,
+React Native Tools,
+Simple React Snippets
