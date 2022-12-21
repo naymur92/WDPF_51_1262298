@@ -1,3 +1,10 @@
 composer create-project codeigniter4/appstarter ci-news
 
 php spark make:controller myhome
+
+php spark make:migration Student
+php spark migrate
+php spark migrate:refresh
+
+php spark make:model modelName
+php spark make:controller student --restful
