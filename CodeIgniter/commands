@@ -8,3 +8,14 @@ php spark migrate:refresh
 
 php spark make:model modelName
 php spark make:controller student --restful
+
+##### Solve CodeIgniter index.php issue
+
+Step 1: Add those line to .htaccess file in public folder # stop showing index.php in link
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.\*)$ index.php/$1 [L]
+
+Step 2: update this in App.php file in App > Config folder
+public $indexPage = '';
