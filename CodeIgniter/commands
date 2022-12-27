@@ -8,6 +8,8 @@ php spark migrate:refresh
 
 php spark make:model modelName
 php spark make:controller student --restful
+php spark make:seeder productsSeeder
+php spark db:seed ProductsSeeder
 
 ##### Solve CodeIgniter index.php issue
 
