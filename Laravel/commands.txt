@@ -1,0 +1,27 @@
+// Laravel Faker Lists
+https://github.com/fzaninotto/Faker
+
+// Install
+composer create-project laravel/laravel:^8.0 example-app
+
+// run
+php artisan serve
+
+// after change environment
+1. composer install/update
+2. create .env file
+3. php artisan key:generate
+4. php artisan db:seed SeederName
+5. php aritsan serve
+
+// version
+php artisan -V
+
+// Make Model, Migration and Controller together
+php artisan make:model Product -mcr
+
+// Migrate:refresh
+php artisan migrate:refresh
+
+// Migrate, refresh, seed
+php artisan migrate:fresh --seed
