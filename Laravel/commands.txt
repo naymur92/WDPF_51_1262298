@@ -25,3 +25,6 @@ php artisan migrate:refresh
 
 // Migrate, refresh, seed
 php artisan migrate:fresh --seed
+
+// Pagination
+php artisan vendor:publish --tag=laravel-pagination
