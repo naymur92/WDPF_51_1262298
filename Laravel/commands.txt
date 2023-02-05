@@ -28,3 +28,6 @@ php artisan migrate:fresh --seed
 
 // Pagination
 php artisan vendor:publish --tag=laravel-pagination
+
+// Create Symlink
+php artisan storage:link
