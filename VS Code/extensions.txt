@@ -12,6 +12,7 @@ Color Highlight,
 Live Server
 
 
+
 // JavaScript, TypeScript
 ESLint,
 JavaScript (ES6) code snippets,
@@ -21,6 +22,7 @@ Babel JavaScript
 
 // Bootstrap
 Bootstrap 4, Font awesome 4, Font awesome 5
+Bootstrap 5 quick snippets
 
 
 // PHP
@@ -28,6 +30,15 @@ PHP Debug,
 PHP IntelliSense,
 PHP Intelephense,
 PHP Extension Pack
+PHP DocBlocker
+
+// Laravel
+Laravel Artisan
+Laravel Blade formatter
+Laravel Blade Snippets
+Laravel Extra IntelliSense
+Laravel IntelliSense
+Laravel Snippets
 
 
 // Angular
@@ -39,3 +50,23 @@ Angular Snippets (Version 13)
 ES7 + React/Redux/React-Native ..,
 React Native Tools,
 Simple React Snippets
+
+// Vue
+Vetur
+Vue 3 snippets
+Vue Language Features (Volar)
+Vue VSCode Snippets
+
+
+// Python
+Pylance
+autopep8
+isort
+Python
+
+
+// C/C++
+C/C++
+C/C++ Extension Pack
+C/C++ Themes
+
